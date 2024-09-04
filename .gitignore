@@ -1,0 +1,41 @@
+.DS_Store
+*.log
+*.tsbuildinfo
+*.code-workspace
+node_modules
+
+# yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+yarn-debug.log*
+yarn-error.log*
+
+
+# build
+build
+static/*.pem
+
+# wasm
+# static/*.wasm
+# src/lib/*.js
+# !src/lib/dummy.js
+src/lib/tmp
+
+# assets
+static/models/jinx
+static/models/bunny-hires.obj
+static/models/lucy.obj
+static/models/robot.*
+static/models/xyzrgb_dragon.obj
+
+# custom
+*.code-workspace
+_references
+
+# tmp
+src/import-export
