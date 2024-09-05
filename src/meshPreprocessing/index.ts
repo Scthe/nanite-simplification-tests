@@ -1,9 +1,11 @@
 import { CONFIG } from '../constants.ts';
 import { MeshletId } from '../naniteObject/naniteObject.ts';
 import {
+  assert_,
+  createArray,
   formatPercentageNumber,
   getTriangleCount,
-  randomIntFromInterval,
+  shuffleArray,
 } from '../utils/index.ts';
 import { BoundingSphere, calculateBounds } from '../utils/calcBounds.ts';
 import {
@@ -26,12 +28,13 @@ import { ParsedMesh } from '../utils/objLoader.ts';
 import { simplifyWithAttributes } from '../meshoptimizer/simplifyWithAttributes.ts';
 import { DbgMeshletExporter } from './dbgExportMeshlets.ts';
 import { simplifyMesh } from '../meshoptimizer/simplifyMesh.ts';
+import { quadricErrorForTriangle } from './quadric.ts';
 
 const findAdjacentMeshlets = CONFIG.nanite.useMapToFindAdjacentEdges
   ? findAdjacentMeshlets_Map
   : findAdjacentMeshlets_Iter;
 
-const DEBUG = false;
+const DEBUG = true;
 // const EXPORT_FIRST_LEVEL = false;
 
 /** Sometimes you get simplification error 0 and then error for children and parent are same. Would render both at same time. */
@@ -344,10 +347,11 @@ async function simplify(
   megaMeshlet: MegaMeshlet,
   reduceToSingleMeshlet: boolean // happens for the last meshlet - DAG root
 ) {
-  // Here either hardcode toward 2 full meshlets or half the triangle count
+  const { allowRemoveRandomTriangles } = CONFIG.nanite;
+
+  // Here either hardcode 2 full meshlets or half the triangle count
   // const targetTriangleCount =
   // megaMeshlet.triangleCount / CONFIG.nanite.simplificationDecimateFactor;
-
   const targetMeshletCnt = reduceToSingleMeshlet ? 1 : 2;
   const targetTriangleCount = Math.min(
     targetMeshletCnt * CONFIG.nanite.meshletMaxTriangles,
@@ -369,6 +373,24 @@ async function simplify(
   );*/
 
   let trianglesAfter = getTriangleCount(simplifiedMesh.indexBuffer);
+  const trianglesStillLeftToRemove = allowRemoveRandomTriangles
+    ? Math.abs(targetTriangleCount - trianglesAfter)
+    : 0;
+  const trisRemoveResult = removeRandomTriangles(
+    parsedMesh.positions,
+    simplifiedMesh.indexBuffer,
+    trianglesStillLeftToRemove
+  );
+  /*if (trianglesStillLeftToRemove > 0) {
+    console.log('errors', {
+      trianglesStillLeftToRemove,
+      simpl: simplifiedMesh.error,
+      rngTriRm: trisRemoveResult.error,
+      factor: simplifiedMesh.error / trisRemoveResult.error,
+    });
+  }*/
+  simplifiedMesh.error += trisRemoveResult.error;
+  simplifiedMesh.indexBuffer = trisRemoveResult.indices;
 
   // AKA percent of triangles still left after simplify.
   // Check if we simplified enough. If we could not simplify further, no point
@@ -376,7 +398,12 @@ async function simplify(
   const trianglesBefore = megaMeshlet.triangleCount;
   trianglesAfter = getTriangleCount(simplifiedMesh.indexBuffer);
   const preservedTrisFactor = trianglesAfter / trianglesBefore;
-  if (preservedTrisFactor > 0.74) {
+  const requiredSimplify = megaMeshlet.triangleCount > targetTriangleCount; // sometimes METIS puts 2 meshlets instead of 4 into a group
+  if (
+    requiredSimplify &&
+    !allowRemoveRandomTriangles &&
+    preservedTrisFactor > 0.74
+  ) {
     // Simplification unsuccessful. This is OK for complicated objects
     // Current `childMeshlet` will be roots of the LOD tree (no parent).
     console.warn(`%c  \\ Part of the mesh could not be simplified more (LOD level=${lodLevel}). Reduced from ${trianglesBefore} to ${formatPercentageNumber(trianglesAfter, trianglesBefore)} triangles`, "color: orange"); // prettier-ignore
@@ -392,12 +419,62 @@ async function simplify(
     const p = isPerfect ? 'PERFECT' : '';
     // prettier-ignore
     console.log(
-      `%c  \\ Simplified (intial=${megaMeshlet.triangleCount} into target=${targetTriangleCount} tris), got ${trianglesAfter} tris (${(100.0 * preservedTrisFactor).toFixed(2)}%). %c${p}`,
+      `%c  \\ Simplify (intial=${megaMeshlet.triangleCount} into target=${targetTriangleCount} tris), got ${trianglesAfter} tris (${(100.0 * preservedTrisFactor).toFixed(2)}%). %c${p}`,
       "color: default","color: green",
     );
   }
 
   return simplifiedMesh;
+}
+
+/** WARNING: THIS CAN ALSO REMOVE TRIANGLES THAT SHARE A BORDER WITH NEIGHBOUR MESHLETS! */
+function removeRandomTriangles(
+  vertexPositions: Float32Array,
+  indexBuffer: Uint32Array,
+  trianglesToRemoveCnt = 1
+) {
+  if (trianglesToRemoveCnt <= 0) {
+    return { indices: indexBuffer, error: 0 };
+  }
+
+  /*// let a = (new Uint32Array([1,2,3,4,5,6,7,8,9])) // browser-test
+  // new Uint32Array(a.buffer, 4) // browser-test
+  const removedIndices = trianglesToRemoveCnt * 3;
+  const removedBytes = removedIndices * 4; // offset
+  return {
+    indices: new Uint32Array(indexBuffer.buffer, removedBytes),
+    error: 0,
+  };*/
+
+  const triangleCntBefore = getTriangleCount(indexBuffer);
+  const triangleIds = createArray(triangleCntBefore).map((_, i) => i); // (0...triangleCntBefore-1)
+  // shuffleArray(triangleIds); // TODO this has weird consequences..
+  // console.log(triangleIds);
+  const removedTrianglesIds = triangleIds.slice(0, trianglesToRemoveCnt);
+  assert_(removedTrianglesIds.length === trianglesToRemoveCnt);
+
+  const preservedTrianglesCnt = triangleCntBefore - trianglesToRemoveCnt;
+  const resultIndices = new Uint32Array(preservedTrianglesCnt * 3);
+  let nextWriteIdx = 0;
+  let error = 0;
+
+  for (let triangleIdx = 0; triangleIdx < triangleCntBefore; triangleIdx++) {
+    const i0 = indexBuffer[triangleIdx * 3];
+    const i1 = indexBuffer[triangleIdx * 3 + 1];
+    const i2 = indexBuffer[triangleIdx * 3 + 2];
+
+    if (removedTrianglesIds.includes(triangleIdx)) {
+      error += quadricErrorForTriangle(vertexPositions, i0, i1, i2);
+    } else {
+      resultIndices[nextWriteIdx + 0] = i0;
+      resultIndices[nextWriteIdx + 1] = i1;
+      resultIndices[nextWriteIdx + 2] = i2;
+      nextWriteIdx += 3;
+    }
+  }
+  assert_(nextWriteIdx === preservedTrianglesCnt * 3);
+
+  return { indices: resultIndices, error };
 }
 
 export class SimplificationError extends Error {

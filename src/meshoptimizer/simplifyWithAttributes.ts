@@ -75,8 +75,6 @@ function _simplifyWithAttributes_IMPL(
 
   const vertex_attributes_data = new Float32Array();
   const attribute_weights = new Float32Array();
-  const vertex_attributes_stride = 0;
-  const attribute_count = 0;
   const lockedVertices = new Uint8Array(vertexCount);
   for (let i = 0; i < vertexCount; i++) {
     lockedVertices[i] = lockedVerticesIds.has(i) ? 1 : 0;
@@ -94,9 +92,9 @@ function _simplifyWithAttributes_IMPL(
       vertexCount, // vertex_count
       stride, // vertex_positions_stride
       wasmPtr(vertex_attributes_data),
-      vertex_attributes_stride,
+      0, // vertex_attributes_stride,
       wasmPtr(attribute_weights),
-      attribute_count,
+      0, // attribute_count,
       wasmPtr(lockedVertices),
       opts.targetIndexCount, // target_index_count
       opts.targetError!, // target_error

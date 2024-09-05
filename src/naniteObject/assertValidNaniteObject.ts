@@ -21,6 +21,12 @@ export function assertValidNaniteObject(naniteObject: NaniteObject) {
     assertHasHigherErrorThanChildren(meshlet);
     assertHasValidParentData(naniteObject, meshlet);
 
+    if (isNaN(meshlet.maxSiblingsError)) {
+      throwErr(`Meshlet has NaN maxSiblingsError`); // prettier-ignore
+    }
+    if (isNaN(meshlet.parentError)) {
+      throwErr(`Meshlet has NaN parentError`); // prettier-ignore
+    }
     if (meshlet.triangleCount > CONFIG.nanite.meshletMaxTriangles) {
       throwErr(`Meshlet contains ${meshlet.triangleCount} triangles, whilte max is ${CONFIG.nanite.meshletMaxTriangles}`); // prettier-ignore
     }
@@ -59,7 +65,7 @@ function assertHaveSameParent(meshlets: NaniteMeshletTreeNode[]) {
 
     // NOTE: we are testing by actually breaking this condition. Makes it easier.
     if (!CONFIG.isTest && m.parentError !== refMeshlet.parentError) {
-      throwErr(`Meshlets should have same 'parentError'`); // prettier-ignore
+      throwErr(`Meshlets should have same 'parentError'. ${m.parentError} vs ${refMeshlet.parentError}`); // prettier-ignore
     }
   }
 }

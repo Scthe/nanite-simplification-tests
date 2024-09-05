@@ -93,8 +93,9 @@ export function formatNumber(num: number, decimals = 2) {
 
 /** Format 4 out of 100 into: '4 (4%)' */
 export function formatPercentageNumber(actual: number, total: number) {
+  const decimals = actual % 1 != 0 ? 2 : 0;
   const percent = total > 0 ? (actual / total) * 100.0 : 0;
-  return `${formatNumber(actual)} (${percent.toFixed(1)}%)`;
+  return `${formatNumber(actual, decimals)} (${percent.toFixed(1)}%)`;
 }
 
 export function replaceFileExt(filePath: string, nextExt: string) {
@@ -104,4 +105,24 @@ export function replaceFileExt(filePath: string, nextExt: string) {
   const fileRoot = filePath.substring(0, pos);
   nextExt = nextExt.startsWith('.') ? nextExt : `.${nextExt}`;
   return `${fileRoot}${nextExt}`;
+}
+
+/** Get random between min (included) and max (excluded).
+ * E.g. `randomIntFromInterval(1, 4)` can return one of: 1, 2, 3
+ */
+export function randomIntFromInterval(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+export function shuffleArray<T>(array: T[]) {
+  for (let i = array.length - 1; i >= 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+export function assert_(cond: boolean, msg = 'Critical failure') {
+  if (!cond) {
+    throw new Error(msg);
+  }
 }

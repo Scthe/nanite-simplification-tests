@@ -49,6 +49,8 @@ export const CONFIG = {
     simplificationDecimateFactor: 2,
     /** target_error for meshoptimizer */
     simplificationTargetError: 3.40282347e30, // close enough to 32-bit float MAX. JS has unusual number representation
+    /** Remove random triangles if simplification failed to reach required triangle count */
+    allowRemoveRandomTriangles: true,
     /** Prevent infinite loop */
     maxLods: 50,
     /** Select algo. to use. IGNORE! */
