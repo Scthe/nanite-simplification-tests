@@ -1,0 +1,382 @@
+"C:\\programs\\portable\\deno\\deno.exe" task start
+Loading file: 'jinx-combined.obj'
+Object '': 26249 vertices, 44443 triangles
+Bounding box min: [-0.64, -0.01, -0.40]
+Bounding box max: [0.39, 1.63, 0.59]
+Creating LOD level 1. Starting with 44443 triangles (348 meshlets). 
+    [LOD 1] Starting with 348 meshlets. Partition into groups of <=4 meshlets: 87
+    Meshlet has 145 (50.9%) locked vertices
+      \ Simplify (intial=411 into target=256 tris), got 255 tris (62.04%). 
+    Meshlet has 106 (34.2%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 167 (48.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 118 (46.5%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 178 (50.7%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 161 (56.7%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 130 (40.0%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 246 (61.7%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 212 (49.2%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 244 (61.2%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 114 (36.0%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 110 (29.1%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 143 (43.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 200 (54.8%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 262 (56.6%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 76 (25.6%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 138 (42.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 170 (59.9%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 118 (46.8%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 122 (37.8%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 99 (32.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 136 (41.3%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 150 (44.6%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 158 (46.3%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 108 (34.5%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 198 (54.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 116 (36.5%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 131 (33.6%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 152 (54.9%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 128 (39.6%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 154 (45.7%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 126 (39.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 187 (45.1%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 163 (48.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 142 (43.0%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 66 (29.2%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 121 (38.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 92 (30.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 100 (32.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 123 (38.2%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 114 (45.2%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 126 (32.5%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 118 (46.6%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 134 (51.1%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 114 (35.8%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 146 (54.3%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 105 (42.3%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 102 (27.3%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 158 (46.5%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 126 (38.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 135 (34.4%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 124 (38.6%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 130 (33.8%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 152 (38.0%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 104 (33.5%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 94 (30.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 82 (35.0%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 94 (25.6%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 174 (42.2%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 72 (31.4%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 78 (26.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 96 (31.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 86 (23.5%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 110 (34.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 90 (37.3%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 177 (43.0%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 112 (44.6%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 78 (33.3%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 132 (40.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 64 (28.3%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 80 (26.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 86 (36.3%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 92 (30.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 114 (36.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 120 (31.5%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 98 (26.5%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 78 (26.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 142 (42.6%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 156 (55.9%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 90 (24.7%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 76 (32.9%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 136 (34.8%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 254 tris (39.69%). 
+    Meshlet has 166 (48.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 106 (34.2%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 177 (43.1%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 126 (39.3%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 206 (48.2%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+Creating LOD level 2. Starting with 22269 triangles (174 meshlets). Previous level removed 22k (49.9%) of the remaining triangles.
+    [LOD 2] Starting with 174 meshlets. Partition into groups of <=4 meshlets: 44
+    Meshlet has 104 (42.4%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 168 (48.7%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 360 (78.3%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 157 (46.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 184 (52.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 164 (47.8%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 213 (57.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 284 (68.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 274 (66.3%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 321 (73.3%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 225 (59.1%) locked vertices
+      \ Simplify (intial=511 into target=256 tris), got 255 tris (49.90%). 
+    Meshlet has 182 (51.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 144 (43.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 126 (48.5%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 154 (45.7%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 244 (62.2%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 130 (40.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 115 (36.5%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 224 (59.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 209 (56.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 232 (52.3%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 150 (44.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 243 (62.8%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 138 (51.9%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 184 (52.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 139 (42.6%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 227 (60.7%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 219 (59.2%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 224 (60.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 225 (59.8%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 176 (50.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 92 (30.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 254 (65.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 216 (57.8%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 188 (52.2%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 108 (34.6%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 142 (42.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 195 (46.4%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 189 (64.7%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 157 (46.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 115 (36.7%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 186 (52.8%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 259 (66.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 223 (60.3%) locked vertices
+      \ Simplify (intial=510 into target=256 tris), got 256 tris (50.20%). PERFECT
+Creating LOD level 3. Starting with 11263 triangles (88 meshlets). Previous level removed 11k (49.4%) of the remaining triangles.
+    [LOD 3] Starting with 88 meshlets. Partition into groups of <=4 meshlets: 22
+    Meshlet has 232 (59.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 246 (62.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 184 (63.2%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 213 (57.9%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 376 (72.6%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 278 tris (43.44%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 158 (57.2%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 183 (52.3%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 216 (58.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 460 (79.6%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 284 tris (44.38%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 474 (90.8%) locked vertices
+      \ Part of the mesh could not be simplified more (LOD level=3). Reduced from 512 to 388 (75.8%) triangles
+    Meshlet has 386 (81.3%) locked vertices
+      \ Simplify (intial=511 into target=256 tris), got 301 tris (58.90%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 276 (80.9%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 262 tris (68.23%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 316 (75.4%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 274 tris (53.52%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 245 (75.4%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 250 (55.8%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 405 (86.0%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 312 tris (60.94%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 211 (57.5%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 282 (69.6%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 386 (73.1%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+    Meshlet has 158 (57.9%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 252 tris (65.63%). 
+    Meshlet has 315 (75.2%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 347 (69.4%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 256 tris (40.00%). PERFECT
+Creating LOD level 4. Starting with 5547 triangles (48 meshlets). Previous level removed 6k (50.8%) of the remaining triangles.
+    [LOD 4] Starting with 48 meshlets. Partition into groups of <=4 meshlets: 12
+    Meshlet has 471 (92.2%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 318 tris (62.11%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 248 (77.5%) locked vertices
+      \ Simplify (intial=380 into target=256 tris), got 256 tris (67.37%). PERFECT
+    Meshlet has 436 (80.1%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 302 tris (47.19%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 371 (95.1%) locked vertices
+      \ Simplify (intial=390 into target=256 tris), got 276 tris (70.77%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 248 (82.9%) locked vertices
+      \ Part of the mesh could not be simplified more (LOD level=4). Reduced from 330 to 256 (77.6%) triangles
+    Meshlet has 503 (85.4%) locked vertices
+      \ Simplify (intial=640 into target=256 tris), got 404 tris (63.13%). 
+    Split into 4 meshlets, expected 2
+    Meshlet has 488 (98.6%) locked vertices
+      \ Part of the mesh could not be simplified more (LOD level=4). Reduced from 429 to 419 (97.7%) triangles
+    Meshlet has 403 (82.1%) locked vertices
+      \ Simplify (intial=534 into target=256 tris), got 340 tris (63.67%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 153 (67.7%) locked vertices
+      \ Part of the mesh could not be simplified more (LOD level=4). Reduced from 284 to 256 (90.1%) triangles
+    Meshlet has 255 (77.7%) locked vertices
+      \ Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    Meshlet has 288 (70.1%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Meshlet has 344 (75.6%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+Creating LOD level 5. Starting with 2664 triangles (24 meshlets). Previous level removed 3k (52.0%) of the remaining triangles.
+    [LOD 5] Starting with 24 meshlets. Partition into groups of <=4 meshlets: 6
+    Meshlet has 272 (76.2%) locked vertices
+      \ Simplify (intial=430 into target=256 tris), got 282 tris (65.58%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 406 (84.2%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 348 tris (67.97%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 424 (86.2%) locked vertices
+      \ Simplify (intial=512 into target=256 tris), got 322 tris (62.89%). 
+    Split into 3 meshlets, expected 2
+    Meshlet has 453 (98.1%) locked vertices
+      \ Part of the mesh could not be simplified more (LOD level=5). Reduced from 402 to 336 (83.6%) triangles
+    Meshlet has 488 (95.1%) locked vertices
+      \ Part of the mesh could not be simplified more (LOD level=5). Reduced from 512 to 482 (94.1%) triangles
+    Meshlet has 294 (95.5%) locked vertices
+      \ Part of the mesh could not be simplified more (LOD level=5). Reduced from 296 to 258 (87.2%) triangles
+Creating LOD level 6. Starting with 952 triangles (9 meshlets). Previous level removed 2k (64.3%) of the remaining triangles.
+    [LOD 6] Starting with 9 meshlets. Partition into groups of <=4 meshlets: 3
+    Meshlet has 240 (89.9%) locked vertices
+      \ Part of the mesh could not be simplified more (LOD level=6). Reduced from 282 to 282 (100.0%) triangles
+    Meshlet has 334 (95.4%) locked vertices
+      \ Part of the mesh could not be simplified more (LOD level=6). Reduced from 322 to 322 (100.0%) triangles
+    Meshlet has 344 (93.2%) locked vertices
+      \ Part of the mesh could not be simplified more (LOD level=6). Reduced from 348 to 346 (99.4%) triangles
+Created 6 LOD levels. Total 691 meshlets.
+There are 348 bottom level meshlets with 44443 triangles.
+There are 36 root meshlets with 3717 triangles. Simplification: 8.4%.
