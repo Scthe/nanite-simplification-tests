@@ -69,6 +69,28 @@ declare namespace meshoptimizer {
   ): SizeT;
 
   /**
+   * https://github.com/zeux/meshoptimizer/blob/master/src/simplifier.cpp#L1781
+   */
+  export function meshopt_simplifyWithAttributes(
+    destination: U32Ptr, // unsigned int* destination,
+    indices: U32Ptr, // const unsigned int* indices,
+    index_count: SizeT, // size_t index_count,
+    vertices: F32Ptr, // const float* vertex_positions_data,
+    vertex_count: SizeT, // size_t vertex_count,
+    vertex_positions_stride: SizeT, // size_t vertex_positions_stride,
+    vertex_attributes_data: F32Ptr, // NEW: const float* vertex_attributes_data,
+    vertex_attributes_stride: SizeT, // NEW: size_t vertex_attributes_stride,
+    attribute_weights: F32Ptr, // NEW: const float* attribute_weights,
+    attribute_count: SizeT, // NEW: size_t attribute_count,
+    // "it is also possible to lock certain vertices by providing a vertex_lock array that contains a boolean value for each vertex in the mesh"
+    vertex_lock: U8Ptr, // NEW: const unsigned char* vertex_lock,
+    target_index_count: SizeT, // size_t target_index_count,
+    target_error: number, // float target_error,
+    options: number, // unsigned int options,
+    out_result_error: F32Ptr // float* out_result_error
+  ): SizeT;
+
+  /**
    * Returns the error scaling factor used by the simplifier to convert between absolute and relative extents
    *
    * https://github.com/zeux/meshoptimizer/blob/3c3e56d312cbe7d5929c78401de2124c7be3bc07/src/meshoptimizer.h#L399

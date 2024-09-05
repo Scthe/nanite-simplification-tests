@@ -14,6 +14,9 @@ export type Edge = string;
 export const createEdge = (ii: number, jj: number): Edge =>
   `${Math.min(ii, jj)}-${Math.max(ii, jj)}`;
 
+export const getEdgeVertices = (e: Edge): [number, number] =>
+  e.split('-').map((v) => parseInt(v)) as any;
+
 export function listAllEdges(indices: Uint32Array): Edge[] {
   if (indices.length % VERTS_IN_TRIANGLE !== 0) {
     throw new Error(

@@ -22,14 +22,7 @@ interface Opts {
   lockBorders?: boolean;
 }
 
-const roundToMultiplyOf3 = (a: number) => Math.floor(a / 3) * 3;
-
-export const calculateTargetIndexCount = (
-  originalCount: number,
-  decimateFactor: number
-) => {
-  return roundToMultiplyOf3(originalCount / decimateFactor);
-};
+export const roundToMultiplyOf3 = (a: number) => Math.floor(a / 3) * 3;
 
 /**
  * Reduce triangle count. Mesh will look worse.
@@ -137,7 +130,7 @@ function simplify2(
 */
 
 /** https://github.com/zeux/meshoptimizer/blob/3c3e56d312cbe7d5929c78401de2124c7be3bc07/src/simplifier.cpp#L1903 */
-function simplifyScale(
+export function simplifyScale(
   module: WasmModule,
   vertices: Float32Array,
   vertexCount: number,
