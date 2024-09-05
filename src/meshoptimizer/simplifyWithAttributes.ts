@@ -2,7 +2,11 @@ import { ParsedMesh } from '../utils/objLoader.ts';
 import { WasmModule } from '../utils/wasm-types.d.ts';
 import { meshoptCall, wasmPtr } from '../utils/wasm.ts';
 import { getMeshOptimizerModule } from './meshoptimizerUtils.ts';
-import { roundToMultiplyOf3, simplifyScale } from './simplifyMesh.ts';
+import {
+  SimplifiedMesh,
+  roundToMultiplyOf3,
+  simplifyScale,
+} from './simplifyMesh.ts';
 
 interface Opts {
   targetIndexCount: number;
@@ -19,7 +23,7 @@ export async function simplifyWithAttributes(
   indices: Uint32Array,
   lockedVerticesIds: Set<number>,
   opts: Opts
-) {
+): Promise<SimplifiedMesh> {
   const module = await getMeshOptimizerModule();
   const indicesCount = indices.length;
 

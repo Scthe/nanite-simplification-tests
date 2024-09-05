@@ -1,6 +1,10 @@
 import { CONFIG } from '../constants.ts';
 import { MeshletId } from '../naniteObject/naniteObject.ts';
-import { formatPercentageNumber, getTriangleCount } from '../utils/index.ts';
+import {
+  formatPercentageNumber,
+  getTriangleCount,
+  randomIntFromInterval,
+} from '../utils/index.ts';
 import { BoundingSphere, calculateBounds } from '../utils/calcBounds.ts';
 import {
   createMeshlets,
@@ -20,17 +24,23 @@ import {
 } from '../metis/partitionGraph.ts';
 import { ParsedMesh } from '../utils/objLoader.ts';
 import { simplifyWithAttributes } from '../meshoptimizer/simplifyWithAttributes.ts';
+import { DbgMeshletExporter } from './dbgExportMeshlets.ts';
+import { simplifyMesh } from '../meshoptimizer/simplifyMesh.ts';
 
 const findAdjacentMeshlets = CONFIG.nanite.useMapToFindAdjacentEdges
   ? findAdjacentMeshlets_Map
   : findAdjacentMeshlets_Iter;
 
 const DEBUG = false;
+// const EXPORT_FIRST_LEVEL = false;
 
 /** Sometimes you get simplification error 0 and then error for children and parent are same. Would render both at same time. */
 const MINIMAL_SIMPLICATION_ERROR = 0.000000001;
 
 let NEXT_MESHLET_ID = 0;
+let exporter: DbgMeshletExporter = undefined!;
+
+// TODO robot still has some problems
 
 /**
  * Meshlet when constructing the tree. This is an intermediary structure.
@@ -70,6 +80,7 @@ export async function createNaniteMeshlets(
   indices: Uint32Array
 ): Promise<MeshletWIP[]> {
   const MAX_LODS = CONFIG.nanite.maxLods;
+  exporter = new DbgMeshletExporter(parsedMesh.positions);
 
   NEXT_MESHLET_ID = 0;
 
@@ -87,9 +98,7 @@ export async function createNaniteMeshlets(
 
   for (; lodLevel < MAX_LODS + 1; lodLevel++) {
     // break condition: nothing left to minimize
-    // prettier-ignore
     if (currentMeshlets.length <= 1) {
-      // console.log(`Did not fill all ${MAX_LODS} LOD levels, mesh is too small`);
       break;
     }
 
@@ -97,7 +106,7 @@ export async function createNaniteMeshlets(
     const removedTrisStr = lodLevel == 1 ? '' : `Previous level removed ${formatPercentageNumber(lastLevelTriangeCount - startTriangeCount, lastLevelTriangeCount)} of the remaining triangles.`; // prettier-ignore
 
     // log
-    console.groupCollapsed(`Creating LOD level ${lodLevel}. Starting with ${startTriangeCount} triangles (${currentMeshlets.length} meshlets). ${removedTrisStr}`); // prettier-ignore
+    console.groupCollapsed(`%cCreating LOD level ${lodLevel}. Starting with ${startTriangeCount} triangles (${currentMeshlets.length} meshlets). ${removedTrisStr}`, "color: blue"); // prettier-ignore
     lastLevelTriangeCount = startTriangeCount;
 
     // 1. group meshlets into groups of 4
@@ -106,56 +115,35 @@ export async function createNaniteMeshlets(
     if (DEBUG) {
       // prettier-ignore
       console.log(
-        `[LOD ${lodLevel}] Starting with ${currentMeshlets.length} meshlets.`,
-        `Partition into groups of <=4 meshlets:`, partitioned
+        `%c[LOD ${lodLevel}] Starting with ${currentMeshlets.length} meshlets. Partition into groups of <=4 meshlets:`,
+        "color: blue", partitioned.length
       );
     }
 
     // 2. for each group of 4 meshlets
     const newlyCreatedMeshlets: MeshletWIP[] = [];
     for (const childMeshletGroup of partitioned) {
+      // TODO add warning if there is unexpected meshlet count after metis. Investigate why?
+      // Metis was not able to find 4 or even 3 meshlets. Grab 2 meshlets and simplify them for a last time into 1
+      const isLastMeshlet = currentMeshlets.length <= 2;
+
       // 2.1 [GROUP] merge triangles from all meshlets in the group
       const megaMeshlet = mergeMeshlets(...childMeshletGroup);
 
       // 2.2 [GROUP] simplify to remove not needed edges/vertices in the middle
-      /*const targetIndexCount = calculateTargetIndexCount(
-        megaMeshlet.indices.length,
-        CONFIG.nanite.simplificationDecimateFactor
-      );*/
-      const targetTriangleCount =
-        megaMeshlet.triangleCount / CONFIG.nanite.simplificationDecimateFactor;
-      /*const simplifiedMesh = await simplifyMesh(
+      const simplifiedMesh = await simplify(
         parsedMesh,
-        megaMeshlet.indices,
-        {
-          targetIndexCount:targetTriangleCount*3,
-          targetError: CONFIG.nanite.simplificationTargetError,
-          lockBorders: true, // important!
-        }
-      );*/
-      const simplifiedMesh = await simplifyWithAttributes(
-        parsedMesh,
-        megaMeshlet.indices,
-        megaMeshlet.lockedVerticesIds,
-        {
-          targetIndexCount: targetTriangleCount * 3,
-          targetError: CONFIG.nanite.simplificationTargetError,
-        }
+        lodLevel,
+        megaMeshlet,
+        isLastMeshlet
       );
-
-      // AKA percent of triangles still left after simplify.
-      // Check if we simplified enough. If we could not simplify further, no point
-      // in continuing for this group for higher levels
-      const trianglesBefore = megaMeshlet.triangleCount;
-      const trianglesAfter = getTriangleCount(simplifiedMesh.indexBuffer);
-      const preservedTrisFactor = trianglesAfter / trianglesBefore;
-      if (preservedTrisFactor > 0.74) {
-        // Simplification unsuccessful. This is OK for complicated objects
-        // Current `childMeshlet` will be roots of the LOD tree (no parent).
-        console.warn(`Part of the mesh could not be simplified more (LOD level=${lodLevel}). Reduced from ${trianglesBefore} to ${formatPercentageNumber(trianglesAfter, trianglesBefore)} triangles`); // prettier-ignore
+      if (!simplifiedMesh) {
+        // debug the 4 meshlets that did not simplify well
+        // childMeshletGroup.forEach((m) =>
+        // exporter.addMeshlet(m.indices, megaMeshlet.lockedVerticesIds)
+        // );
         continue;
       }
-      // TODO check if we still have internal vertices && triangleCount>256
 
       // simplification went OK, calculate meshlet data
       const errorNow = Math.max(
@@ -171,24 +159,18 @@ export async function createNaniteMeshlets(
         megaMeshlet.indices
       ).sphere;
 
-      // 2.3 [GROUP] split into new meshlets. Share: simplificationError, bounds (both are used in nanite to reproject the error)
+      // 2.3 [GROUP] split into new meshlets.
+      // Share: simplificationError, bounds (both are used in nanite to reproject the error)
       let newMeshlets: MeshletWIP[];
-      if (partitioned.length === 1) {
+      if (isLastMeshlet) {
         // this happens on last iteration, when < 4 meshlets
+        console.log('Reached last meshlet. Creating root node');
         // prettier-ignore
         const rootMeshlet = await createMeshletWip(simplifiedMesh.indexBuffer, totalError, childMeshletGroup, bounds);
         newMeshlets = [rootMeshlet];
       } else {
         // prettier-ignore
         newMeshlets = await splitIntoMeshlets(simplifiedMesh.indexBuffer, totalError, childMeshletGroup, bounds);
-      }
-
-      if (DEBUG) {
-        // prettier-ignore
-        console.log(
-          `\tTry simplify (intial=${megaMeshlet.triangleCount} into target=${targetTriangleCount} tris), got ${getTriangleCount(simplifiedMesh.indexBuffer)} tris (${(100.0 * preservedTrisFactor).toFixed(2)}%).`,
-          'Meshlets:', newMeshlets
-        );
       }
 
       // update all lower level meshlets with parent data.
@@ -207,6 +189,10 @@ export async function createNaniteMeshlets(
     }
 
     currentMeshlets = newlyCreatedMeshlets;
+    // if (EXPORT_FIRST_LEVEL) {
+    // exporter.write('meshlet');
+    // Deno.exit(0);
+    // }
     console.groupEnd();
   }
 
@@ -215,6 +201,7 @@ export async function createNaniteMeshlets(
 
   // mass free the memory, see the JSDocs of the fn.
   metisFreeAllocations();
+  // exporter.write('meshlet');
 
   return allMeshlets;
 
@@ -246,6 +233,12 @@ export async function createNaniteMeshlets(
         );
       })
     );
+
+    // 'createdFrom' is 0 for the initial meshlet split
+    if (DEBUG && meshlets.length != 2 && createdFrom.length > 0) {
+      // TODO repeat simplification?
+      console.log(`%cSplit into ${meshlets.length} meshlets, expected 2`, 'color: yellow'); // prettier-ignore
+    }
 
     return meshlets;
   }
@@ -279,6 +272,8 @@ async function groupMeshletsMetis(currentMeshlets: MeshletWIP[]) {
   const GROUP_SIZE = 4;
   const nparts = Math.ceil(currentMeshlets.length / GROUP_SIZE);
   let partitioned = [currentMeshlets];
+
+  // TODO add metis weights
   if (currentMeshlets.length > GROUP_SIZE) {
     const adjacency = findAdjacentMeshlets(
       currentMeshlets.map((m) => m.boundaryEdges)
@@ -329,13 +324,80 @@ function mergeMeshlets(...meshletGroup: MeshletWIP[]): MegaMeshlet {
 
   // stats
   const allVertices = new Set(indices);
-  console.log(`Meshlet has ${formatPercentageNumber(lockedVerticesIds.size, allVertices.size)} locked vertices`); // prettier-ignore
+  if (DEBUG) {
+    console.log(`Meshlet has ${formatPercentageNumber(lockedVerticesIds.size, allVertices.size)} locked vertices`); // prettier-ignore
+  }
+
+  // export
+  // exporter.addMeshlet(indices, lockedVerticesIds);
 
   return {
     indices,
     lockedVerticesIds,
     triangleCount: getTriangleCount(indices),
   };
+}
+
+async function simplify(
+  parsedMesh: ParsedMesh,
+  lodLevel: number,
+  megaMeshlet: MegaMeshlet,
+  reduceToSingleMeshlet: boolean // happens for the last meshlet - DAG root
+) {
+  // Here either hardcode toward 2 full meshlets or half the triangle count
+  // const targetTriangleCount =
+  // megaMeshlet.triangleCount / CONFIG.nanite.simplificationDecimateFactor;
+
+  const targetMeshletCnt = reduceToSingleMeshlet ? 1 : 2;
+  const targetTriangleCount = Math.min(
+    targetMeshletCnt * CONFIG.nanite.meshletMaxTriangles,
+    megaMeshlet.triangleCount
+  );
+  const simplifiedMesh = await simplifyMesh(parsedMesh, megaMeshlet.indices, {
+    targetIndexCount: targetTriangleCount * 3,
+    targetError: CONFIG.nanite.simplificationTargetError,
+    lockBorders: true, // important!
+  });
+  /*const simplifiedMesh = await simplifyWithAttributes(
+    parsedMesh,
+    megaMeshlet.indices,
+    megaMeshlet.lockedVerticesIds,
+    {
+      targetIndexCount: targetTriangleCount * 3,
+      targetError: CONFIG.nanite.simplificationTargetError,
+    }
+  );*/
+
+  let trianglesAfter = getTriangleCount(simplifiedMesh.indexBuffer);
+
+  // AKA percent of triangles still left after simplify.
+  // Check if we simplified enough. If we could not simplify further, no point
+  // in continuing for this group for higher levels
+  const trianglesBefore = megaMeshlet.triangleCount;
+  trianglesAfter = getTriangleCount(simplifiedMesh.indexBuffer);
+  const preservedTrisFactor = trianglesAfter / trianglesBefore;
+  if (preservedTrisFactor > 0.74) {
+    // Simplification unsuccessful. This is OK for complicated objects
+    // Current `childMeshlet` will be roots of the LOD tree (no parent).
+    console.warn(`%c  \\ Part of the mesh could not be simplified more (LOD level=${lodLevel}). Reduced from ${trianglesBefore} to ${formatPercentageNumber(trianglesAfter, trianglesBefore)} triangles`, "color: orange"); // prettier-ignore
+
+    // debug the merged meshlet
+    // exporter.addMeshlet(megaMeshlet.indices, megaMeshlet.lockedVerticesIds);
+    return undefined;
+  }
+
+  if (DEBUG) {
+    const isPerfect = trianglesAfter === targetTriangleCount;
+    // const p = isPerfect ? ['%c- PERFECT', 'color: green'] : [];
+    const p = isPerfect ? 'PERFECT' : '';
+    // prettier-ignore
+    console.log(
+      `%c  \\ Simplified (intial=${megaMeshlet.triangleCount} into target=${targetTriangleCount} tris), got ${trianglesAfter} tris (${(100.0 * preservedTrisFactor).toFixed(2)}%). %c${p}`,
+      "color: default","color: green",
+    );
+  }
+
+  return simplifiedMesh;
 }
 
 export class SimplificationError extends Error {

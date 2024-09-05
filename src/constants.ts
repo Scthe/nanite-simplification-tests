@@ -44,19 +44,14 @@ export const CONFIG = {
   nanite: {
     meshletMaxVertices: 255,
     meshletMaxTriangles: 128,
-    meshletBackfaceCullingConeWeight: 1.0,
+    meshletBackfaceCullingConeWeight: 0.0, // cone culling
     /** Reduce triangle count per each level. */
     simplificationDecimateFactor: 2,
     /** target_error for meshoptimizer */
-    simplificationTargetError: 3.40282347e30, // 0.05,
-    /** We half triangle count each time. Each meshlet is 124 triangles.
-     * $2^{MAX_LODS}*124$. E.g. MAX_LODS=15 gives 4M. Vertices above would
-     * lead to many top-level tree nodes. Suboptimal, but not incorrect.
-     */
+    simplificationTargetError: 3.40282347e30, // close enough to 32-bit float MAX. JS has unusual number representation
+    /** Prevent infinite loop */
     maxLods: 50,
-    /** Select algo. to use */
+    /** Select algo. to use. IGNORE! */
     useMapToFindAdjacentEdges: true,
-    /** Go to Devtools->Performance to check Chrome's log */
-    enableProfiler: false,
   },
 };

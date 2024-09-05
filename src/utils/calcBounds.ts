@@ -112,7 +112,7 @@ export function printBoundingBox(
   stride = CO_PER_VERTEX
 ) {
   const [minCo, maxCo] = calcBoundingBox(vertices, stride);
-  const p = (a: number[]) => '[' + a.map((x) => x.toFixed(2)).join(',') + ']';
+  const p = (a: number[]) => '[' + a.map((x) => x.toFixed(2)).join(', ') + ']';
   console.log(`Bounding box min:`, p(minCo));
   console.log(`Bounding box max:`, p(maxCo));
 }
