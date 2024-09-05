@@ -406,7 +406,7 @@ async function simplify(
   ) {
     // Simplification unsuccessful. This is OK for complicated objects
     // Current `childMeshlet` will be roots of the LOD tree (no parent).
-    console.warn(`%c  \\ Part of the mesh could not be simplified more (LOD level=${lodLevel}). Reduced from ${trianglesBefore} to ${formatPercentageNumber(trianglesAfter, trianglesBefore)} triangles`, "color: orange"); // prettier-ignore
+    console.log(`%c  \\ Part of the mesh could not be simplified more (LOD level=${lodLevel}). Reduced from ${trianglesBefore} to ${formatPercentageNumber(trianglesAfter, trianglesBefore)} triangles`, "color: orange"); // prettier-ignore
 
     // debug the merged meshlet
     // exporter.addMeshlet(megaMeshlet.indices, megaMeshlet.lockedVerticesIds);

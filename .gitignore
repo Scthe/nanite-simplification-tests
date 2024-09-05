@@ -24,7 +24,11 @@ static/*.pem
 # static/*.wasm
 # src/lib/*.js
 # !src/lib/dummy.js
-src/lib/tmp
+src/lib/*.js
+!src/lib/dummy.js
+!src/lib/meshoptimizer.js
+!src/lib/metis3-1.js
+static/meshoptimizer0.wasm
 
 # assets
 static/models/jinx
@@ -32,10 +36,15 @@ static/models/bunny-hires.obj
 static/models/lucy.obj
 static/models/robot.*
 static/models/xyzrgb_dragon.obj
+dbg-meshlet.obj
 
 # custom
 *.code-workspace
 _references
 
 # tmp
-src/import-export
+esbuild-script.js
+yarn.lock
+package.json
+static/favicon.ico
+static/index.html

@@ -2,7 +2,7 @@
 
 Tests for mesh simplification for [Nanite WebGPU](https://github.com/Scthe/nanite-webgpu). Intended for me.
 
-Main file you want: [src/meshPreprocessing/index.ts](src/meshPreprocessing/index.ts). Theire is a separate [config file](src/constants.ts).
+Main file you want: [src/meshPreprocessing/index.ts](src/meshPreprocessing/index.ts). There is a separate [config file](src/constants.ts).
 
 The context for this repo is discussions with [JMS55](https://github.com/JMS55) and [Arseny Kapoulkine](https://github.com/zeux). Since this README.md has a stupidly ridiculous conclusion, I'm only going to link my own posts:
 
@@ -40,7 +40,7 @@ There is a definition of an optimal DAG (from ["Batched Multi Triangulation"](ht
 
 ATM I think that it's not possible to get an optimal DAG by only following the standard simplification rules. A similar observation I've buried in [Nanite WebGPU's Usage.md](https://github.com/Scthe/nanite-webgpu/blob/20f768a97df2bcbde7c9bbe02107727c0407d9c9/USAGE.md#what-are-simplification-warningserrors). Let's take a model that has flat shading. Each vertex is unique wrt. position and normal. According to problem 2), there is nothing we can do with it.
 
-There are some ways to partially solve this, but none that will **always** work. E.g. you can merge vertices that are close, but it's not a definitive solution.
+There are some ways to partially solve this, but none that will **always** work. E.g. you can merge vertices that are close, do more edge collapses, some weird triangle merges (how?). But none seems like a definitive solution.
 
 Actually, I lied. There is one solution that works every time. Randomly removing triangles when the simplifier gets stuck. This also includes triangles whose edge is shared with neighboring meshlets. You increase Nanite's simplification error (one used for error metric) so that the meshlet is not shown to the user if the artifacts would be visible.
 
