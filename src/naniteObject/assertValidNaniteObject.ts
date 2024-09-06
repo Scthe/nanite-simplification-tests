@@ -28,7 +28,7 @@ export function assertValidNaniteObject(naniteObject: NaniteObject) {
       throwErr(`Meshlet has NaN parentError`); // prettier-ignore
     }
     if (meshlet.triangleCount > CONFIG.nanite.meshletMaxTriangles) {
-      throwErr(`Meshlet contains ${meshlet.triangleCount} triangles, whilte max is ${CONFIG.nanite.meshletMaxTriangles}`); // prettier-ignore
+      throwErr(`Meshlet contains ${meshlet.triangleCount} triangles, while max is ${CONFIG.nanite.meshletMaxTriangles}`); // prettier-ignore
     }
 
     meshlet.createdFrom.forEach((m) => {

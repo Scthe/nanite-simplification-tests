@@ -37,6 +37,7 @@ static/models/lucy.obj
 static/models/robot.*
 static/models/xyzrgb_dragon.obj
 dbg-meshlet.obj
+dbg-obj/*.obj
 
 # custom
 *.code-workspace

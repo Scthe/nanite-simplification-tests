@@ -16,9 +16,8 @@ import {
   listAllEdges,
   findBoundaryEdges,
   Edge,
-  findAdjacentMeshlets_Iter,
-  findAdjacentMeshlets_Map,
   getEdgeVertices,
+  createMeshletAdjacencyMap,
 } from './edgesUtils.ts';
 import {
   metisFreeAllocations,
@@ -30,18 +29,19 @@ import { DbgMeshletExporter } from './dbgExportMeshlets.ts';
 import { simplifyMesh } from '../meshoptimizer/simplifyMesh.ts';
 import { quadricErrorForTriangle } from './quadric.ts';
 
-const findAdjacentMeshlets = CONFIG.nanite.useMapToFindAdjacentEdges
-  ? findAdjacentMeshlets_Map
-  : findAdjacentMeshlets_Iter;
-
-const DEBUG = true;
-// const EXPORT_FIRST_LEVEL = false;
+let DEBUG = true;
 
 /** Sometimes you get simplification error 0 and then error for children and parent are same. Would render both at same time. */
 const MINIMAL_SIMPLICATION_ERROR = 0.000000001;
 
 let NEXT_MESHLET_ID = 0;
 let exporter: DbgMeshletExporter = undefined!;
+
+function exportMeshletWIP(m: MeshletWIP) {
+  const edges = Array.from(m.boundaryEdges);
+  const boundsVertices = edges.map(getEdgeVertices).flat();
+  exporter.addMeshlet(m.indices, new Set(boundsVertices));
+}
 
 // TODO robot still has some problems
 
@@ -58,7 +58,9 @@ export interface MeshletWIP {
   /** 0 for leaf, N for root (e.g. 6 is the root for bunny.obj) */
   lodLevel: number;
   indices: Uint32Array;
-  boundaryEdges: Edge[];
+  boundaryEdges: Set<Edge>;
+  /** Neighbour idx among meshlets of same level */
+  neighbourMeshletIdx: Set<MeshletId>;
 
   // Nanite error calc:
   /** ## CALCULATED DURING CREATION!
@@ -86,6 +88,7 @@ export async function createNaniteMeshlets(
   exporter = new DbgMeshletExporter(parsedMesh.positions);
 
   NEXT_MESHLET_ID = 0;
+  // DEBUG = DEBUG && getTriangleCount(parsedMesh.indices) < 200000;
 
   const allMeshlets: MeshletWIP[] = [];
   let lodLevel = 0;
@@ -94,6 +97,7 @@ export async function createNaniteMeshlets(
   // If the parent also passes the check, the parent should be rendered instead
   const mockBounds = calculateBounds(parsedMesh.positions, indices).sphere;
   const bottomMeshlets = await splitIntoMeshlets(indices, 0.0, [], mockBounds);
+  fillAdjacency(bottomMeshlets);
 
   let currentMeshlets = bottomMeshlets;
   lodLevel += 1;
@@ -192,19 +196,32 @@ export async function createNaniteMeshlets(
     }
 
     currentMeshlets = newlyCreatedMeshlets;
-    // if (EXPORT_FIRST_LEVEL) {
-    // exporter.write('meshlet');
-    // Deno.exit(0);
-    // }
+    fillAdjacency(currentMeshlets);
+    // await exporter.write(`meshlets-${lodLevel}`);
     console.groupEnd();
   }
+
+  const root = currentMeshlets[0];
+  // exportMeshletWIP(root);
+  // root.createdFrom.forEach(exportMeshletWIP);
+  // await exporter.write();
+
+  // export all, level by level
+  /*let i = 0;
+  while (true) {
+    const meshlets = allMeshlets.filter((m) => m.lodLevel === i);
+    if (meshlets.length === 0) break;
+    // console.log(`lvl ${0}, meshlets: ${meshlets.length}`);
+    meshlets.forEach(exportMeshletWIP);
+    await exporter.write(`meshlets-${i}`);
+    i += 1;
+  }*/
 
   // We have filled all LOD tree levels (or reached MAX_LODS iters).
   // By now the LOD tree is complete
 
   // mass free the memory, see the JSDocs of the fn.
   metisFreeAllocations();
-  // exporter.write('meshlet');
 
   return allMeshlets;
 
@@ -252,12 +269,11 @@ export async function createNaniteMeshlets(
     createdFrom: MeshletWIP[],
     sharedSiblingsBounds: BoundingSphere
   ): MeshletWIP {
-    const edges = listAllEdges(indices);
-    const boundaryEdges = findBoundaryEdges(edges);
     const m: MeshletWIP = {
       id: NEXT_MESHLET_ID,
       indices,
-      boundaryEdges,
+      boundaryEdges: new Set(),
+      neighbourMeshletIdx: new Set(),
       maxSiblingsError: simplificationError,
       parentError: Infinity,
       sharedSiblingsBounds,
@@ -271,6 +287,27 @@ export async function createNaniteMeshlets(
   }
 }
 
+function fillAdjacency(meshlets: MeshletWIP[]) {
+  const boundaryEdges: Array<Edge[]> = meshlets.map((m) => {
+    const edges = listAllEdges(m.indices);
+    return findBoundaryEdges(edges);
+  });
+
+  const meshletsByEdges = createMeshletAdjacencyMap(boundaryEdges);
+  meshletsByEdges.forEach((meshletIdx, edge) => {
+    if (meshletIdx.length <= 1) return;
+
+    meshletIdx.forEach((idx) => {
+      const m = meshlets[idx];
+      m.boundaryEdges.add(edge);
+
+      meshletIdx.forEach((idx2) => {
+        if (idx !== idx2) m.neighbourMeshletIdx.add(idx2);
+      });
+    });
+  });
+}
+
 async function groupMeshletsMetis(currentMeshlets: MeshletWIP[]) {
   const GROUP_SIZE = 4;
   const nparts = Math.ceil(currentMeshlets.length / GROUP_SIZE);
@@ -278,8 +315,8 @@ async function groupMeshletsMetis(currentMeshlets: MeshletWIP[]) {
 
   // TODO add metis weights
   if (currentMeshlets.length > GROUP_SIZE) {
-    const adjacency = findAdjacentMeshlets(
-      currentMeshlets.map((m) => m.boundaryEdges)
+    const adjacency = currentMeshlets.map((m) =>
+      Array.from(m.neighbourMeshletIdx)
     );
     // each part is 4 meshlets
     const meshletIdxPerPart = await partitionGraph(adjacency, nparts, {});
@@ -315,8 +352,10 @@ function mergeMeshlets(...meshletGroup: MeshletWIP[]): MegaMeshlet {
     });
   });
 
-  // edges
-  const allEdges: Edge[] = meshletGroup.map((m) => m.boundaryEdges).flat();
+  // find external edges after merge
+  const allEdges: Edge[] = meshletGroup
+    .map((m) => Array.from(m.boundaryEdges))
+    .flat();
   const externalEdges = findElementsThatAreUnique(allEdges);
   const lockedVerticesIds = new Set<number>();
   externalEdges.forEach((e) => {
@@ -332,7 +371,9 @@ function mergeMeshlets(...meshletGroup: MeshletWIP[]): MegaMeshlet {
   }
 
   // export
-  // exporter.addMeshlet(indices, lockedVerticesIds);
+  // if (meshletGroup[0].lodLevel === 1) {
+  // exporter.addMeshlet(indices, lockedVerticesIds, 'megameshlet');
+  // }
 
   return {
     indices,
@@ -350,19 +391,20 @@ async function simplify(
   const { allowRemoveRandomTriangles } = CONFIG.nanite;
 
   // Here either hardcode 2 full meshlets or half the triangle count
-  // const targetTriangleCount =
-  // megaMeshlet.triangleCount / CONFIG.nanite.simplificationDecimateFactor;
+  const targetTriangleCount = Math.ceil(
+    megaMeshlet.triangleCount / CONFIG.nanite.simplificationDecimateFactor
+  );
   const targetMeshletCnt = reduceToSingleMeshlet ? 1 : 2;
-  const targetTriangleCount = Math.min(
+  /*const targetTriangleCount = Math.min(
     targetMeshletCnt * CONFIG.nanite.meshletMaxTriangles,
     megaMeshlet.triangleCount
-  );
-  const simplifiedMesh = await simplifyMesh(parsedMesh, megaMeshlet.indices, {
+  );*/
+  /*const simplifiedMesh = await simplifyMesh(parsedMesh, megaMeshlet.indices, {
     targetIndexCount: targetTriangleCount * 3,
     targetError: CONFIG.nanite.simplificationTargetError,
     lockBorders: true, // important!
-  });
-  /*const simplifiedMesh = await simplifyWithAttributes(
+  });*/
+  const simplifiedMesh = await simplifyWithAttributes(
     parsedMesh,
     megaMeshlet.indices,
     megaMeshlet.lockedVerticesIds,
@@ -370,7 +412,7 @@ async function simplify(
       targetIndexCount: targetTriangleCount * 3,
       targetError: CONFIG.nanite.simplificationTargetError,
     }
-  );*/
+  );
 
   let trianglesAfter = getTriangleCount(simplifiedMesh.indexBuffer);
   const trianglesStillLeftToRemove = allowRemoveRandomTriangles
@@ -398,11 +440,15 @@ async function simplify(
   const trianglesBefore = megaMeshlet.triangleCount;
   trianglesAfter = getTriangleCount(simplifiedMesh.indexBuffer);
   const preservedTrisFactor = trianglesAfter / trianglesBefore;
-  const requiredSimplify = megaMeshlet.triangleCount > targetTriangleCount; // sometimes METIS puts 2 meshlets instead of 4 into a group
+  const megameshletHadTooMuchTris =
+    megaMeshlet.triangleCount > targetTriangleCount; // sometimes METIS puts 2 meshlets instead of 4 into a group
+
   if (
-    requiredSimplify &&
+    megameshletHadTooMuchTris &&
     !allowRemoveRandomTriangles &&
-    preservedTrisFactor > 0.74
+    preservedTrisFactor > 0.74 &&
+    // we want to simplify to at most 2*128 triangles. If not possible than fail
+    trianglesAfter > targetMeshletCnt * CONFIG.nanite.meshletMaxTriangles
   ) {
     // Simplification unsuccessful. This is OK for complicated objects
     // Current `childMeshlet` will be roots of the LOD tree (no parent).
@@ -414,7 +460,7 @@ async function simplify(
   }
 
   if (DEBUG) {
-    const isPerfect = trianglesAfter === targetTriangleCount;
+    const isPerfect = trianglesAfter <= targetTriangleCount;
     // const p = isPerfect ? ['%c- PERFECT', 'color: green'] : [];
     const p = isPerfect ? 'PERFECT' : '';
     // prettier-ignore
@@ -431,7 +477,7 @@ async function simplify(
 function removeRandomTriangles(
   vertexPositions: Float32Array,
   indexBuffer: Uint32Array,
-  trianglesToRemoveCnt = 1
+  trianglesToRemoveCnt: number
 ) {
   if (trianglesToRemoveCnt <= 0) {
     return { indices: indexBuffer, error: 0 };

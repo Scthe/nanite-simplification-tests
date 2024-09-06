@@ -18,7 +18,10 @@ There is also a separate discussion in [meshoptimizer's repo](https://github.com
 ### Problems
 
 1. Nanite does not allow you to simplify vertices that are shared with other meshlets. This is usually 30-50% of the meshlet's vertices when constructing the first DAG level. It gets worse on higher levels.
-1. At some point, you end up with disjointed triangles. Not possible to simplify.
+   1. Border is defined as an edge that belongs to a single triangle. Meshes with not connected triangles will have this value higher.
+   2. For Nanite you usually define border as vertices shared by 2 meshlets. This value greatly depends on meshes. Comfortably <30% of vertices for the first LOD levels, goes down to ~0% later on.
+   3. Stats measured on [Arcane - Jinx](https://sketchfab.com/3d-models/arcane-jinx-b74f25a5ee6e43efbe9766b9fbebc705) and [Modular Mecha Doll Neon Mask](https://sketchfab.com/3d-models/modular-mecha-doll-neon-mask-1e0dcf3e016f4bc897d4b39819220732). Both are complex models with disconnected geometry. Using models for rocks would yield less tumultuous values.
+2. At some point, you end up with disjointed triangles. Not possible to simplify.
 
 As for problem 2), from [meshoptimizer's](https://github.com/zeux/meshoptimizer?tab=readme-ov-file#simplification) documentation:
 

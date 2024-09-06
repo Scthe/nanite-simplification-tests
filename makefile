@@ -13,3 +13,6 @@ bunny:
 
 robot:
 	$(DENO) task start robot.obj
+
+subd-plane:
+	$(DENO) task start subdivided-plane.obj

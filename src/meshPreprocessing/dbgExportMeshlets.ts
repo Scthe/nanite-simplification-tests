@@ -14,9 +14,13 @@ export class DbgMeshletExporter {
     private readonly prefix: string = 'dbg'
   ) {}
 
-  addMeshlet(indices: Uint32Array, lockedVerticesIds: Set<number> = new Set()) {
+  addMeshlet(
+    indices: Uint32Array,
+    lockedVerticesIds: Set<number> = new Set(),
+    name = 'meshlet'
+  ) {
     this.meshlets.push({
-      name: `meshlet-${this.meshlets.length}`,
+      name: `${name}-${this.meshlets.length}`,
       indices,
       lockedVerticesIds,
     });
@@ -30,12 +34,13 @@ export class DbgMeshletExporter {
   }
 
   async write(filePath: string = 'meshlet') {
-    console.log('EXPORTING: ', filePath);
+    filePath = `dbg-obj/${this.prefix}-${filePath}.obj`;
+    console.log(`EXPORTING: '${filePath}' - ${this.meshlets.length} meshlets`);
     const lines: string[] = [];
     this.meshlets.forEach((m) => this.dumpMeshlet(lines, m));
 
-    filePath = `${this.prefix}-${filePath}.obj`;
     await Deno.writeTextFile(filePath, lines.join('\n'));
+    this.meshlets = [];
   }
 
   private dumpMeshlet(lines: string[], m: MeshletDbg) {
