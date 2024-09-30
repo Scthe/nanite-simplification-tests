@@ -122,8 +122,8 @@ export async function createNaniteMeshlets(
     if (DEBUG) {
       // prettier-ignore
       console.log(
-        `%c[LOD ${lodLevel}] Starting with ${currentMeshlets.length} meshlets. Partition into groups of <=4 meshlets:`,
-        "color: blue", partitioned.length
+        `%c[LOD ${lodLevel}] Starting with ${currentMeshlets.length} meshlets. Partition into ${partitioned.length} groups of <=4 meshlets`,
+        "color: blue", 
       );
     }
 
@@ -390,15 +390,15 @@ async function simplify(
 ) {
   const { allowRemoveRandomTriangles } = CONFIG.nanite;
 
-  // Here either hardcode 2 full meshlets or half the triangle count
-  const targetTriangleCount = Math.ceil(
+  const targetMeshletCnt = reduceToSingleMeshlet ? 1 : 2;
+  const targetTriangleCount = Math.floor(
     megaMeshlet.triangleCount / CONFIG.nanite.simplificationDecimateFactor
   );
-  const targetMeshletCnt = reduceToSingleMeshlet ? 1 : 2;
   /*const targetTriangleCount = Math.min(
     targetMeshletCnt * CONFIG.nanite.meshletMaxTriangles,
     megaMeshlet.triangleCount
   );*/
+
   /*const simplifiedMesh = await simplifyMesh(parsedMesh, megaMeshlet.indices, {
     targetIndexCount: targetTriangleCount * 3,
     targetError: CONFIG.nanite.simplificationTargetError,
@@ -415,9 +415,19 @@ async function simplify(
   );
 
   let trianglesAfter = getTriangleCount(simplifiedMesh.indexBuffer);
-  const trianglesStillLeftToRemove = allowRemoveRandomTriangles
-    ? Math.abs(targetTriangleCount - trianglesAfter)
-    : 0;
+  const trianglesStillLeftToRemove =
+    allowRemoveRandomTriangles && trianglesAfter > targetTriangleCount
+      ? Math.abs(targetTriangleCount - trianglesAfter)
+      : 0;
+  /*if (trianglesStillLeftToRemove > 0) {
+    console.log({
+      intial: megaMeshlet.triangleCount,
+      targetTriangleCount,
+      trianglesAfter1stStep: trianglesAfter,
+      trianglesStillLeftToRemove,
+    });
+  }*/
+
   const trisRemoveResult = removeRandomTriangles(
     parsedMesh.positions,
     simplifiedMesh.indexBuffer,
@@ -446,7 +456,7 @@ async function simplify(
   if (
     megameshletHadTooMuchTris &&
     !allowRemoveRandomTriangles &&
-    preservedTrisFactor > 0.74 &&
+    preservedTrisFactor > 0.74 && // TODO if you had 3 meshlets in a group, this is 66%
     // we want to simplify to at most 2*128 triangles. If not possible than fail
     trianglesAfter > targetMeshletCnt * CONFIG.nanite.meshletMaxTriangles
   ) {
@@ -482,6 +492,10 @@ function removeRandomTriangles(
   if (trianglesToRemoveCnt <= 0) {
     return { indices: indexBuffer, error: 0 };
   }
+  console.log(
+    `%c  \\ RNG triangle remove: ${trianglesToRemoveCnt}`,
+    'color: red'
+  );
 
   /*// let a = (new Uint32Array([1,2,3,4,5,6,7,8,9])) // browser-test
   // new Uint32Array(a.buffer, 4) // browser-test
@@ -494,7 +508,7 @@ function removeRandomTriangles(
 
   const triangleCntBefore = getTriangleCount(indexBuffer);
   const triangleIds = createArray(triangleCntBefore).map((_, i) => i); // (0...triangleCntBefore-1)
-  // shuffleArray(triangleIds); // TODO this has weird consequences..
+  shuffleArray(triangleIds);
   // console.log(triangleIds);
   const removedTrianglesIds = triangleIds.slice(0, trianglesToRemoveCnt);
   assert_(removedTrianglesIds.length === trianglesToRemoveCnt);
