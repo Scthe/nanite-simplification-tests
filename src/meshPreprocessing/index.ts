@@ -43,8 +43,6 @@ function exportMeshletWIP(m: MeshletWIP) {
   exporter.addMeshlet(m.indices, new Set(boundsVertices));
 }
 
-// TODO robot still has some problems
-
 /**
  * Meshlet when constructing the tree. This is an intermediary structure.
  * Later on we will convert it to 'NaniteMeshletTreeNode'.
@@ -415,10 +413,9 @@ async function simplify(
   );
 
   let trianglesAfter = getTriangleCount(simplifiedMesh.indexBuffer);
-  const trianglesStillLeftToRemove =
-    allowRemoveRandomTriangles && trianglesAfter > targetTriangleCount
-      ? Math.abs(targetTriangleCount - trianglesAfter)
-      : 0;
+  const trianglesStillLeftToRemove = allowRemoveRandomTriangles
+    ? Math.max(trianglesAfter - targetTriangleCount, 0)
+    : 0;
   /*if (trianglesStillLeftToRemove > 0) {
     console.log({
       intial: megaMeshlet.triangleCount,
