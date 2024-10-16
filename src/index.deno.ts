@@ -3,12 +3,43 @@ import {
   injectMetisWASM,
 } from './sys_deno/testUtils.ts';
 import { loadObject } from './loadObject.ts';
-
-const DEFAULT_OBJECT = 'jinx-combined.obj';
+import { CONFIG } from './constants.ts';
 
 injectMeshoptimizerWASM();
 injectMetisWASM();
 
-const objectFile = Deno.args.length > 0 ? Deno.args[0] : DEFAULT_OBJECT;
+const objectFilePath = parseCmdArgs();
+console.log('CONFIG', CONFIG.nanite);
 
-const obj = await loadObject(objectFile);
+const obj = await loadObject(objectFilePath);
+
+function parseCmdArgs(): string {
+  const args = Deno.args.slice();
+
+  if (args.length === 0) throw new Error('First arg should be .obj file path');
+  const objFile = args.shift()!;
+
+  args.forEach((arg) => {
+    arg = arg.trim().toLowerCase();
+    console.log({ arg });
+    switch (arg) {
+      case 'border-geometric': {
+        CONFIG.nanite.border = 'geometric';
+        break;
+      }
+      case 'decimate-round-to-meshlet': {
+        CONFIG.nanite.simplificationDecimateRoundToMeshlet = true;
+        break;
+      }
+      case 'no-rng-tris-remove': {
+        CONFIG.nanite.allowRemoveRandomTriangles = false;
+        break;
+      }
+      default: {
+        throw new Error(`Unknown arg '${arg}'`);
+      }
+    }
+  });
+
+  return objFile;
+}

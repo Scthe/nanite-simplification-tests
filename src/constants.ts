@@ -30,6 +30,8 @@ export const VERTS_IN_TRIANGLE: number = 3;
 export type TextFileReader = (filename: string) => Promise<string>;
 export type BinaryFileReader = (filename: string) => Promise<ArrayBuffer>;
 
+type BorderType = 'geometric' | 'meshlets';
+
 export const CONFIG = {
   /** Test env may require GPUBuffers to have extra COPY_* flags to readback results. Or silence console spam. */
   isTest: false,
@@ -47,10 +49,19 @@ export const CONFIG = {
     meshletBackfaceCullingConeWeight: 0.0, // cone culling
     /** Reduce triangle count per each level. */
     simplificationDecimateFactor: 2,
+    /** Simplification will round up target tris count to $meshletMaxTriangles.
+     * Does not matter that much in practice as meshoptimizer can split 256 tris into 3 meshlets of [120, 128, 8] tris. */
+    simplificationDecimateRoundToMeshlet: false,
     /** target_error for meshoptimizer */
     simplificationTargetError: 3.40282347e30, // close enough to 32-bit float MAX. JS has unusual number representation
     /** Remove random triangles if simplification failed to reach required triangle count */
     allowRemoveRandomTriangles: true,
+    mergeGroupSize: 4, // TODO docs implement
+    border: 'meshlets' as BorderType,
+
+    ///////////////////
+    // Not important options below:
+
     /** Prevent infinite loop */
     maxLods: 50,
     /** Select algo. to use. IGNORE! */

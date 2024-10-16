@@ -77,7 +77,7 @@ export function createMeshlets_TESTS(
       sharedSiblingsBounds: MOCK_SIBLINGS_BOUNDS,
       parentBounds: parentIdx !== undefined ? MOCK_PARENT_BOUNDS : undefined,
       // ignore fields below:
-      boundaryEdges: [],
+      sharedEdges: [],
       createdFrom: [],
       indices: new Uint32Array([0, 1, 2]),
       lodLevel: 0,

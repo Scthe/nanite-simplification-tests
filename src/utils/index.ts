@@ -126,3 +126,8 @@ export function assert_(cond: boolean, msg = 'Critical failure') {
     throw new Error(msg);
   }
 }
+
+export const findUniqueElements = <T>(arr: T[]) =>
+  arr.filter((e) => {
+    return arr.indexOf(e) === arr.lastIndexOf(e);
+  });
