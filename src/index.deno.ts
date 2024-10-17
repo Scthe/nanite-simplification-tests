@@ -18,10 +18,10 @@ function parseCmdArgs(): string {
 
   if (args.length === 0) throw new Error('First arg should be .obj file path');
   const objFile = args.shift()!;
+  console.log(`Cmd args: [${args.join('|')}]`);
 
   args.forEach((arg) => {
     arg = arg.trim().toLowerCase();
-    console.log({ arg });
     switch (arg) {
       case 'border-geometric': {
         CONFIG.nanite.border = 'geometric';
@@ -33,6 +33,14 @@ function parseCmdArgs(): string {
       }
       case 'no-rng-tris-remove': {
         CONFIG.nanite.allowRemoveRandomTriangles = false;
+        break;
+      }
+      case '16': {
+        CONFIG.nanite.mergeGroupSize = 16;
+        break;
+      }
+      case '32': {
+        CONFIG.nanite.mergeGroupSize = 32;
         break;
       }
       default: {

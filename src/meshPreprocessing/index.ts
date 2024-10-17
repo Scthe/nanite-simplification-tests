@@ -30,6 +30,7 @@ import { simplifyWithAttributes } from '../meshoptimizer/simplifyWithAttributes.
 import { DbgMeshletExporter } from './dbgExportMeshlets.ts';
 import { SimplifiedMesh, simplifyMesh } from '../meshoptimizer/simplifyMesh.ts';
 import { quadricErrorForTriangle } from './quadric.ts';
+import { METIS_OPTION } from '../metis/partitionGraph.ts';
 
 let DEBUG = true;
 
@@ -45,7 +46,7 @@ let exporter: DbgMeshletExporter = undefined!;
   exporter.addMeshlet(m.indices, new Set(boundsVertices));
 }*/
 
-const TRIS_REMOVED_PER_LEVEL: Record<number | string, number> = {};
+const TRIS_REMOVED_PER_LEVEL: Record<number, number> = {};
 
 const addStatsTrisRngRemoved = (lvl: number, cnt: number) => {
   const v = TRIS_REMOVED_PER_LEVEL[lvl] || 0;
@@ -65,7 +66,6 @@ export interface MeshletWIP {
   /** 0 for leaf, N for root (e.g. 6 is the root for bunny.obj) */
   lodLevel: number;
   indices: Uint32Array;
-  // geometricEdges: Set<Edge>;
   geometricBorderVertices: Set<number>;
 
   // Nanite error calc:
@@ -115,7 +115,19 @@ export async function createNaniteMeshlets(
       break;
     }
 
+    // log level data
     const startTriangeCount = getMeshletsTriangleCount(currentMeshlets);
+    console.groupCollapsed(
+      `%c\nCreating LOD level ${lodLevel}. Starting with ${currentMeshlets.length} meshlets (${startTriangeCount} triangles).`,
+      'color: blue'
+    );
+    if (lodLevel > 1) {
+      const trisRemovedStr = formatPercentageNumber(
+        lastLevelTriangeCount - startTriangeCount,
+        lastLevelTriangeCount
+      );
+      console.log(`%cPrevious level removed ${trisRemovedStr} of the remaining triangles.`, "color: blue"); // prettier-ignore
+    }
 
     // 1. group meshlets into groups of 4 (or $mergeGroupSize)
     // e.g. 33 meshlets is 9 groups (last one is 1 meshlet)
@@ -127,16 +139,7 @@ export async function createNaniteMeshlets(
       vertexPositionHashes,
       partitioned
     );
-
-    // log level data
-    console.groupCollapsed(`%cCreating LOD level ${lodLevel}. Starting with ${currentMeshlets.length} meshlets (${startTriangeCount} triangles). Partitioned into ${partitioned.length} groups of <=${CONFIG.nanite.mergeGroupSize} meshlets`, "color: blue"); // prettier-ignore
-    if (lodLevel > 1) {
-      const trisRemovedStr = formatPercentageNumber(
-        lastLevelTriangeCount - startTriangeCount,
-        lastLevelTriangeCount
-      );
-      console.log(`%cPrevious level removed ${trisRemovedStr} of the remaining triangles.`, "color: blue"); // prettier-ignore
-    }
+    console.log(`%cPartitioned into ${partitioned.length} groups of ~${CONFIG.nanite.mergeGroupSize} meshlets`, "color: blue"); // prettier-ignore
     lastLevelTriangeCount = startTriangeCount;
 
     // 2. for each group of 4 meshlets
@@ -169,6 +172,8 @@ export async function createNaniteMeshlets(
         ...childMeshletGroup.map((m) => m.maxSiblingsError)
       );
       const totalError = errorNow + childrenError;
+      // TODO Should be a sphere that encompass the child spheres.
+      //      "Smallest enclosing balls of balls" http://www.inf.ethz.ch/personal/emo/DoctThesisFiles/fischer05.pdf
       const bounds = calculateBounds(parsedMesh.positions, megaMeshlet.indices).sphere; // prettier-ignore
 
       // 2.3 [GROUP] split into new meshlets.
@@ -227,12 +232,8 @@ export async function createNaniteMeshlets(
   // mass free the memory, see the JSDocs of the fn.
   metisFreeAllocations();
 
-  console.log('\n------------- SUMMARY -------------');
-
-  TRIS_REMOVED_PER_LEVEL['total'] = Object.values(
-    TRIS_REMOVED_PER_LEVEL
-  ).reduce((acc, x) => acc + x, 0);
-  console.log('RNG tris removed per level', TRIS_REMOVED_PER_LEVEL);
+  // final logs
+  printFinalStats(allMeshlets);
 
   return allMeshlets;
 
@@ -266,12 +267,23 @@ export async function createNaniteMeshlets(
     );
 
     const isInitialSplit = createdFrom.length === 0;
+    const expectedMeshletCnt = Math.min(
+      // if you have 346 tris, you expect e meshlets e.g. [128, 128, 90].
+      Math.ceil(getTriangleCount(indices) / CONFIG.nanite.meshletMaxTriangles),
+      // we could have ($mergeGroupSize / 2) here, but sometimes METIS groups >$mergeGroupSize meshlets. This is how METIS works, so no reason to report it
+      Math.ceil(createdFrom.length / 2)
+    );
+
+    // log if we split into MORE meshlets than expected.
+    // E.g. we expect to simplify 16 meshlets into 8 etc.
+    // This can happen cause e.g. METIS grouped 17 meshlets together (instead of 16). Or meshoptimizer decided it's better to have more groups.
+    // It's ok to have LESS meshlets than expected. Usually caused by many low-triangle meshlets that were grouped and simplified nicely.
     if (
       DEBUG &&
-      !isInitialSplit &&
-      meshlets.length != CONFIG.nanite.mergeGroupSize / 2
+      !isInitialSplit && // (prettier pls)
+      meshlets.length > expectedMeshletCnt
     ) {
-      console.log(`%c\tSplit into ${meshlets.length} meshlets, expected 2`, 'color: yellow'); // prettier-ignore
+      console.log(`%c\tSplit into ${meshlets.length} meshlets, expected ${expectedMeshletCnt}`, 'color: yellow'); // prettier-ignore
     }
 
     return meshlets;
@@ -317,8 +329,25 @@ async function groupMeshletsMetis(
   if (currentMeshlets.length > GROUP_SIZE) {
     const adjacency = createMeshletAdjacencyMap(posHashes, currentMeshlets);
 
-    // each part is 4 meshlets
-    const meshletIdxPerPart = await partitionGraph(adjacency, nparts, {});
+    // each part is ~GROUP_SIZE meshlets.
+    // It can be more, it can be less. We only tell metis HOW MANY GROUPS TO CREATE,
+    // we cannot specify we want them <=GROUP_SIZE each.
+    // METIS is not a greedy algorithm!
+    const meshletIdxPerPart = await partitionGraph(adjacency, nparts, {
+      // https://github.com/zeux/meshoptimizer/blob/c664ea295861242f018d3b72ed150acc2cf848c8/demo/nanite.cpp#L340
+      [METIS_OPTION.UFACTOR]: 100,
+    });
+
+    const meshletsCountPerPart = meshletIdxPerPart.map((e) => e.length);
+    // prettier-ignore
+    // console.log(`METIS split ${currentMeshlets.length} into ${nparts} groups:`, meshletsCountPerPart);
+    const partsTooBig = meshletsCountPerPart.filter((e) => e > GROUP_SIZE);
+    if (partsTooBig.length > 0) {
+      const msg = `There are ${formatPercentageNumber(partsTooBig.length,meshletsCountPerPart.length)} parts after METIS split with more meshlets than ${GROUP_SIZE}. This is just how METIS works.`; // prettier-ignore
+      // throw new Error(msg);
+      console.log(`%c${msg}`, 'color:orange;');
+    }
+
     partitioned = meshletIdxPerPart.map((indices) => {
       return indices.map((i) => currentMeshlets[i]);
     });
@@ -470,9 +499,21 @@ function getTargetTriangleCount(megaMeshlet: MegaMeshlet) {
   );
 
   if (cfg.simplificationDecimateRoundToMeshlet) {
-    targetTriangleCount =
+    // let pre_targetTriangleCount = targetTriangleCount;
+    const roundedTrisCnt =
       Math.ceil(targetTriangleCount / cfg.meshletMaxTriangles) *
       cfg.meshletMaxTriangles;
+
+    // if megaMeshlet has only e.g. 12 tris [2,8,2], then we cannot simplify it into 128..
+    if (roundedTrisCnt < megaMeshlet.triangleCount) {
+      targetTriangleCount = roundedTrisCnt;
+    }
+    /*console.log({
+      megaMeshlet_triangleCount: megaMeshlet.triangleCount,
+      megaMeshlet_groupMeshletCnt: megaMeshlet.groupMeshletCnt,
+      targetTriangleCount,
+      pre_targetTriangleCount,
+    });*/
   }
 
   return targetTriangleCount;
@@ -541,4 +582,47 @@ export class SimplificationError extends Error {
 function getMeshletsTriangleCount(mx: MeshletWIP[]) {
   const idxCnt = mx.reduce((acc, m) => acc + m.indices.length, 0);
   return getTriangleCount(idxCnt);
+}
+
+function printFinalStats(allMeshlets: MeshletWIP[]) {
+  console.log('\n------------- SUMMARY -------------');
+  const CFG = CONFIG.nanite;
+  const lodLevel = allMeshlets.reduce((acc, m) => Math.max(acc, m.lodLevel), 0);
+
+  for (let i = 0; i < lodLevel + 1; i++) {
+    const meshlets = allMeshlets.filter((e) => e.lodLevel === i);
+    const trisCnt = getMeshletsTriangleCount(meshlets);
+
+    // meshlet stats
+    let fullyFilledCnt = 0;
+    let halfFilledCnt = 0;
+    meshlets.forEach((m) => {
+      const tris = getTriangleCount(m.indices);
+      fullyFilledCnt += tris === CFG.meshletMaxTriangles ? 1 : 0;
+      halfFilledCnt += tris <= CFG.meshletMaxTriangles / 2 ? 1 : 0;
+    });
+    const fullyFilledPct = formatPercentageNumber(fullyFilledCnt, meshlets.length) // prettier-ignore
+    const halfFilledPct = formatPercentageNumber(halfFilledCnt, meshlets.length) // prettier-ignore
+
+    // tris rm stats
+    const trisRngRemovedCnt = TRIS_REMOVED_PER_LEVEL[i];
+    const trisRngRemovedCntStr =
+      trisRngRemovedCnt > 0
+        ? `RNG tris removed: ${formatPercentageNumber(trisRngRemovedCnt, trisCnt)}.` // prettier-ignore
+        : '';
+
+    console.log(
+      `%cLevel ${i}: %c${meshlets.length} meshlets (${trisCnt} tris). Meshlets: ${fullyFilledPct} fully filled, ${halfFilledPct} half filled. ${trisRngRemovedCntStr}`, // prettier-ignore
+      'color: blue',
+      'color: default'
+    );
+  }
+
+  const totalRngTrisRemoved = Object.values(TRIS_REMOVED_PER_LEVEL).reduce(
+    (acc, x) => acc + x,
+    0
+  );
+  const totalTris = getMeshletsTriangleCount(allMeshlets);
+  console.log(`Total RNG tris removed: ${formatPercentageNumber(totalRngTrisRemoved, totalTris)}`); // prettier-ignore
+  console.log('');
 }

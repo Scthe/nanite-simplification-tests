@@ -91,11 +91,14 @@ export function formatNumber(num: number, decimals = 2) {
   return `${sign}${v}${units[i]}`;
 }
 
+/** Return true if is not fractional (is integer and not a float) */
+export const isInt = (x: number) => x % 1 === 0;
+
 /** Format 4 out of 100 into: '4 (4%)' */
 export function formatPercentageNumber(actual: number, total: number) {
-  const decimals = actual % 1 != 0 ? 2 : 0;
+  const decimals = isInt(actual) ? 0 : 2;
   const percent = total > 0 ? (actual / total) * 100.0 : 0;
-  return `${formatNumber(actual, decimals)} (${percent.toFixed(1)}%)`;
+  return `${actual} (${percent.toFixed(1)}%)`;
 }
 
 export function replaceFileExt(filePath: string, nextExt: string) {

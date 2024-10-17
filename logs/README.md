@@ -2,16 +2,23 @@
 
 ## Model files
 
+Both models are characters, which is a terrible scenario.
+
 * [jinx](https://github.com/Scthe/nanite-webgpu/tree/master/static/models/jinx-combined)
 * [robot](https://sketchfab.com/3d-models/modular-mecha-doll-neon-mask-1e0dcf3e016f4bc897d4b39819220732)
 
-## Log files
+## Naming convention
 
-* `jinx.txt` - without random triangle removal. Ends up as 36 root meshlets (3717 triangles).
-* `jinx-rngTrisRemove.txt` - with random triangle removal. Ends up as 1 root meshlet with 128 triangles.
-* `jinx-sharedBorder-rngTrisRemove.txt` - with random triangle removal. Border defined as vertices shared between meshlets.
-    * In this log, meshlet size is not rounded to 128/128 tris. This has neglible impact on stats.
-* `robot.txt` - the "Modular Mecha Doll Neon Mask" model without random triangle removal. Ends up as 1597 root meshlets (176614 triangles).
-* `robot-rngTrisRemove.txt` - the "Modular Mecha Doll Neon Mask" model with random triangle removal. Ends up as 1 root meshlets with 128 triangles.
-* `robot-sharedBorder-rngTrisRemove.txt` - with random triangle removal. Border defined as vertices shared between meshlets.
-    * In this log, meshlet size is not rounded to 128/128 tris. This has neglible impact on stats.
+Each filename contains special attributes describing used simplification options. See [src/constants.ts](../src/constants.ts) for more details about the options.
+
+* `rngTrisRemove`. With random triangle removal.
+    * **Verdict:** No other choice if you want a perfect DAG?
+* `meshletBorder`. Border defined as vertices shared between meshlets.
+    * Without this setting, border is defined as vertices on non-internal edges ("geometric" definition)
+    * **Verdict:** Mandatory.
+* `roundUpTrisTo128`. After dividing triangle count by 2, `ceil()` it to the nearest 128 triangles.
+    * Adds a few meshlets and LOD levels. If you have 10 vs 4 meshlets at e.g. LOD level 6 will make a huge difference in total LOD level count. LOD level count by itself is a flawed metric. For some meshes this will make 0 difference.
+    * **Verdict:** Works best for lower merge group size. Just see [src/constants.ts](../src/constants.ts).
+* `32`. Merge 32 meshlets instead of 4.
+    * **Verdict:** Mandatory. Exact value TBD, can be adaptive based on level's meshlet count.
+    * See meshoptimizer's original [implementation](https://github.com/zeux/meshoptimizer/blob/master/demo/nanite.cpp).

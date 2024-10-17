@@ -50,13 +50,20 @@ export const CONFIG = {
     /** Reduce triangle count per each level. */
     simplificationDecimateFactor: 2,
     /** Simplification will round up target tris count to $meshletMaxTriangles.
-     * Does not matter that much in practice as meshoptimizer can split 256 tris into 3 meshlets of [120, 128, 8] tris. */
+     * Does not matter that much in practice as meshoptimizer can split 256 tris into 3 meshlets of [120, 128, 8] tris. We could greedy merge them, but there might be a reason for such split e.g. all 3 meshlets do not share any vertex. They might be even spread apart and the combined bounding sphere would be big (harder to cull).
+     *
+     * Usually this adds few nodes, a LOD level or 2. But it should RNG-remove triangles more uniformly between levels. */
     simplificationDecimateRoundToMeshlet: false,
     /** target_error for meshoptimizer */
     simplificationTargetError: 3.40282347e30, // close enough to 32-bit float MAX. JS has unusual number representation
     /** Remove random triangles if simplification failed to reach required triangle count */
     allowRemoveRandomTriangles: true,
-    mergeGroupSize: 4, // TODO docs implement
+    /** How many meshlets to merge? Original slides had 4, but this is restrictive. 16 or 32 is better. */
+    mergeGroupSize: 4, // TODO adaptive?
+    /**
+     * - 'geometric' - Border defined as vertices on non-internal edges
+     * - 'meshlets' - Border defined as vertices shared between meshlets.
+     */
     border: 'meshlets' as BorderType,
 
     ///////////////////

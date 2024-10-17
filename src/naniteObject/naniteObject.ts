@@ -113,6 +113,7 @@ export class NaniteObject {
 
     console.log(`Created ${this.lodLevelCount} LOD levels. Total ${this.meshletCount} meshlets.`); // prettier-ignore
     console.log(`There are ${this.bottomMeshletCount} bottom level meshlets with ${trianglesBefore} triangles.`); // prettier-ignore
-    console.log(`There are ${this.roots.length} root meshlets with ${trianglesAfter} triangles. Simplification: ${simplifPct.toFixed(1)}%.`); // prettier-ignore
+    console.log(`There are ${this.roots.length} root meshlets with ${trianglesAfter} triangles.`); // prettier-ignore
+    console.log(`Best case renders only ${simplifPct.toFixed(1)}% triangles.`); // prettier-ignore
   }
 }

@@ -43,6 +43,9 @@ dbg-obj/*.obj
 *.code-workspace
 _references
 
+# logs
+logs/bunny*
+
 # tmp
 esbuild-script.js
 yarn.lock

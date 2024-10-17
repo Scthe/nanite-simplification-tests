@@ -5,17 +5,36 @@ DENO = "C:\\programs\\portable\\deno\\deno.exe"
 install:
 	$(DENO) cache "src/index.deno.ts"
 
+clean:
+	rm logs/*txt
+
 run:
-	$(DENO) task start jinx-combined.obj
+	$(DENO) task start jinx-combined.obj 16
 
 run2:
-	$(DENO) task start jinx-combined.obj decimate-round-to-meshlet
+	$(DENO) task start jinx-combined.obj 16 decimate-round-to-meshlet
+
+# e.g. 'make bench-jinx', 'make bench-robot'
+bench-%:
+	python bench.py $*
+
+
+##############################
+### Misc models
 
 bunny:
 	$(DENO) task start bunny.obj
 
+subd-plane:
+	$(DENO) task start subdivided-plane.obj
+
 robot:
 	$(DENO) task start robot.obj
 
-subd-plane:
-	$(DENO) task start subdivided-plane.obj
+benchmark-jinx:
+	$(DENO) task start jinx-combined.obj border-geometric no-rng-tris-remove > "logs\jinx.txt"
+	$(DENO) task start jinx-combined.obj border-geometric > "logs\jinx-rngTrisRemove.txt"
+	$(DENO) task start jinx-combined.obj > "logs\jinx-rngTrisRemove-meshletBorder.txt"
+	$(DENO) task start jinx-combined.obj 32 > "logs\jinx-rngTrisRemove-meshletBorder-32.txt"
+	$(DENO) task start jinx-combined.obj decimate-round-to-meshlet > "logs\jinx-rngTrisRemove-meshletBorder-roundUpTrisTo128.txt"
+	$(DENO) task start jinx-combined.obj decimate-round-to-meshlet 32 > "logs\jinx-rngTrisRemove-meshletBorder-roundUpTrisTo128-32.txt"

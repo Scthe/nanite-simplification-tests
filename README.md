@@ -2,7 +2,7 @@
 
 Tests for mesh simplification for [Nanite WebGPU](https://github.com/Scthe/nanite-webgpu). Intended for me.
 
-Main file you want: [src/meshPreprocessing/index.ts](src/meshPreprocessing/index.ts). There is a separate [config file](src/constants.ts).
+Main file you want: [src/meshPreprocessing/index.ts](src/meshPreprocessing/index.ts). There is a separate [config file](src/constants.ts). See [logs](logs) for raw data.
 
 The context for this repo is discussions with [JMS55](https://github.com/JMS55) and [Arseny Kapoulkine](https://github.com/zeux). Since this README.md has a stupidly ridiculous conclusion, I'm only going to link my own posts:
 
@@ -13,17 +13,11 @@ There is also a separate discussion in [meshoptimizer's repo](https://github.com
 
 
 
-## Quick notes (draft)
+## Quick notes
 
-### Problems
+### Main problem
 
-1. Nanite does not allow you to simplify vertices that are shared with other meshlets. This is usually 30-50% of the meshlet's vertices when constructing the first DAG level. It gets worse on higher levels.
-   1. Border is defined as an edge that belongs to a single triangle. Meshes with not connected triangles will have this value higher.
-   2. For Nanite you usually define border as vertices shared by 2 meshlets. This value greatly depends on meshes. Comfortably <30% of vertices for the first LOD levels, goes down to ~0% later on.
-   3. Stats measured on [Arcane - Jinx](https://sketchfab.com/3d-models/arcane-jinx-b74f25a5ee6e43efbe9766b9fbebc705) and [Modular Mecha Doll Neon Mask](https://sketchfab.com/3d-models/modular-mecha-doll-neon-mask-1e0dcf3e016f4bc897d4b39819220732). Both are complex models with disconnected geometry. Using models for rocks would yield less tumultuous values.
-2. At some point, you end up with disjointed triangles. Not possible to simplify.
-
-As for problem 2), from [meshoptimizer's](https://github.com/zeux/meshoptimizer?tab=readme-ov-file#simplification) documentation:
+After a few rounds of meshlet hierarchy simplification, some meshes end up with disjointed triangles. Not possible to simplify. From [meshoptimizer's](https://github.com/zeux/meshoptimizer?tab=readme-ov-file#simplification) documentation:
 
 > For meshes with inconsistent topology or many seams, such as faceted meshes, it can result in simplifier getting "stuck" and not being able to simplify the mesh fully. Therefore it's critical that identical vertices are "welded" together, that is, the input vertex buffer does not contain duplicates. Additionally, it may be worthwhile to weld the vertices without taking into account vertex attributes that aren't critical and can be rebuilt later.
 
@@ -41,18 +35,18 @@ There is a definition of an optimal DAG (from ["Batched Multi Triangulation"](ht
 
 > BTW. I know nothing about mesh simplification algorithms.
 
-ATM I think that it's not possible to get an optimal DAG by only following the standard simplification rules. A similar observation I've buried in [Nanite WebGPU's Usage.md](https://github.com/Scthe/nanite-webgpu/blob/20f768a97df2bcbde7c9bbe02107727c0407d9c9/USAGE.md#what-are-simplification-warningserrors). Let's take a model that has flat shading. Each vertex is unique wrt. position and normal. According to problem 2), there is nothing we can do with it.
+ATM I think that it's not possible to get an optimal DAG by only following the standard simplification rules. A similar observation I've buried in [Nanite WebGPU's Usage.md](https://github.com/Scthe/nanite-webgpu/blob/20f768a97df2bcbde7c9bbe02107727c0407d9c9/USAGE.md#what-are-simplification-warningserrors). Let's take a model that has flat shading. Each vertex is unique wrt. position and normal. Nothing we can do.
 
 There are some ways to partially solve this, but none that will **always** work. E.g. you can merge vertices that are close, do more edge collapses, some weird triangle merges (how?). But none seems like a definitive solution.
 
 Actually, I lied. There is one solution that works every time. Randomly removing triangles when the simplifier gets stuck. This also includes triangles whose edge is shared with neighboring meshlets. You increase Nanite's simplification error (one used for error metric) so that the meshlet is not shown to the user if the artifacts would be visible.
 
-This is the same solution used for LODs in my ["Frostbitten hair WebGPU"](https://github.com/Scthe/frostbitten-hair-webgpu/blob/3acd5df90409ed4c2ab43e10042ee86c26c8199a/src/scene/hair/hairObject.ts#L52). But there I remove randomly entire hair strands ([Frostbite does the same](https://youtu.be/ool2E8SQPGU?si=qklCeRbGZHXTB0jZ&t=1638)).
+> This is the same solution used for LODs in my ["Frostbitten hair WebGPU"](https://github.com/Scthe/frostbitten-hair-webgpu/blob/3acd5df90409ed4c2ab43e10042ee86c26c8199a/src/scene/hair/hairObject.ts#L52). But there I remove randomly entire hair strands ([Frostbite does the same](https://youtu.be/ool2E8SQPGU?si=qklCeRbGZHXTB0jZ&t=1638)).
 
 
-Not sure if there is an alternative? I'm glad I only do this in my spare time.
+Not sure if there is an alternative?
 
-I'm also not sure you can always get a balanced DAG. Sometimes METIS creates a group with a single meshlet instead of 4 and you wonder what to do with it. But this solves itself on higher levels. Or tune METIS better. I don't think that's a big issue (needs testing).
+I'm also not sure you can always get a balanced DAG. Sometimes METIS creates a group with a single meshlet instead of 4 and you wonder what to do with it. This solves itself on higher levels and it's not a big issue.
 
 
 ## Usage (not tested)
