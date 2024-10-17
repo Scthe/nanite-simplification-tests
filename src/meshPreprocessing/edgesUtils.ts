@@ -1,6 +1,13 @@
 import { VERTS_IN_TRIANGLE } from '../constants.ts';
+import { GraphNodeConnections } from '../metis/partitionGraph.ts';
 import { MeshletId } from '../naniteObject/naniteObject.ts';
-import { getTriangleCount } from '../utils/index.ts';
+import {
+  combinations,
+  getTriangleCount,
+  getVertexCount,
+} from '../utils/index.ts';
+import { ParsedMesh } from '../utils/objLoader.ts';
+import { MeshletWIP } from './index.ts';
 
 /** Indices of the vertices. First index is the smaller number.
  *
@@ -58,22 +65,101 @@ export function findBoundaryEdges(allEdges: Edge[]): Edge[] {
   return allEdges.filter((e) => countEdgeRepeats(e) == 1);
 }
 
-export type MeshletAdjacencyMap = Map<Edge, Array<MeshletId>>;
+export type VertexPositionHashes = string[];
 
-export function createMeshletAdjacencyMap(edgesPerMeshlet: Array<Edge[]>) {
-  // map: edge -> meshletId[]
-  const meshletsByEdges = new Map<Edge, Array<MeshletId>>();
+export const hashVertexPositions = (mesh: ParsedMesh): VertexPositionHashes => {
+  const result: VertexPositionHashes = [];
+  for (let i = 0; i < getVertexCount(mesh.positions); i++) {
+    const x = mesh.positions[i * 3 + 0];
+    const y = mesh.positions[i * 3 + 1];
+    const z = mesh.positions[i * 3 + 2];
+    result.push(`${x}_${y}_${z}`);
+  }
 
-  // fill the map
-  for (let i = 0; i < edgesPerMeshlet.length; i++) {
-    const meshletEdges = edgesPerMeshlet[i];
-    for (let j = 0; j < meshletEdges.length; j++) {
-      const edgeHash = meshletEdges[j];
-      const data = meshletsByEdges.get(edgeHash) || [];
-      data.push(i);
-      meshletsByEdges.set(edgeHash, data);
+  return result;
+};
+
+export function createMeshletAdjacencyMap(
+  posHashes: VertexPositionHashes,
+  meshlets: MeshletWIP[]
+) {
+  const meshletsByVerts = new Map<string, Set<MeshletId>>();
+  meshlets.forEach((m, mIdx) => {
+    /*m.geometricEdges.forEach((e) => {
+      const edgeVerts = getEdgeVertices(e);
+      edgeVerts.forEach((vId) => {
+        const hash = posHashes[vId];
+        const data = meshletsByVerts.get(hash) || new Set();
+        data.add(mIdx);
+        meshletsByVerts.set(hash, data);
+      });
+    });*/
+    m.geometricBorderVertices.forEach((vId) => {
+      const hash = posHashes[vId];
+      const data = meshletsByVerts.get(hash) || new Set();
+      data.add(mIdx);
+      meshletsByVerts.set(hash, data);
+    });
+  });
+
+  const meshletPairsToVertCnt = new Map<string, number>();
+  for (const meshledIdxs of meshletsByVerts.values()) {
+    for (const [mIdx0, mIdx1] of combinations(Array.from(meshledIdxs))) {
+      const key = createEdge(mIdx0, mIdx1);
+      const v = meshletPairsToVertCnt.get(key) || 0;
+      meshletPairsToVertCnt.set(key, v + 1);
     }
   }
 
-  return meshletsByEdges;
+  const adjacency: GraphNodeConnections[] = meshlets.map((_) => []);
+  const addAdjacencyOneDir = (mIdx0: number, mIdx1: number, weight: number) => {
+    const a0 = adjacency[mIdx0] || [];
+    a0.push({ otherNodeIdx: mIdx1, weight });
+    adjacency[mIdx0] = a0;
+  };
+
+  meshletPairsToVertCnt.forEach((sharedVertCount, key) => {
+    const [mIdx0, mIdx1] = getEdgeVertices(key);
+    addAdjacencyOneDir(mIdx0, mIdx1, sharedVertCount);
+    addAdjacencyOneDir(mIdx1, mIdx0, sharedVertCount);
+  });
+
+  return adjacency;
+}
+
+export function calculateLockedVerticesBetweenMeshlets(
+  posHashes: VertexPositionHashes,
+  meshletGroups: MeshletWIP[][]
+) {
+  const MARK_LOCKED = -1;
+  // Map cause our hash-by-position for each vertex is a string.
+  // too lazy to fix this.
+  const claimedVertices = new Map<string, number>();
+
+  meshletGroups.forEach((meshlets, groupId) => {
+    meshlets.forEach((m) => {
+      m.geometricBorderVertices.forEach((vId) => {
+        const hash = posHashes[vId];
+        const isClaimedByOtherGroup =
+          claimedVertices.has(hash) && claimedVertices.get(hash) !== groupId;
+
+        if (isClaimedByOtherGroup) {
+          claimedVertices.set(hash, MARK_LOCKED);
+        } else {
+          // claim the vertex for the current groupId
+          claimedVertices.set(hash, groupId);
+        }
+      });
+    });
+  });
+
+  // we have to do this in 2 passes
+  const result = new Set<number>();
+  posHashes.forEach((hash, vId) => {
+    if (claimedVertices.get(hash) === MARK_LOCKED) {
+      result.add(vId);
+    }
+  });
+
+  return result;
 }

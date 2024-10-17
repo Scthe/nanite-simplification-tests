@@ -73,6 +73,12 @@ const METIS_ERROR_INPUT = -2; // Returned due to erroneous inputs and/or options
 const METIS_ERROR_MEMORY = -3; // Returned due to insufficient memory
 const METIS_ERROR = -4; // Some other errors
 
+export interface GraphNodeEdge {
+  otherNodeIdx: number;
+  weight: number;
+}
+export type GraphNodeConnections = GraphNodeEdge[];
+
 /**
  * Use metis to partition the graph.
  *
@@ -82,18 +88,19 @@ const METIS_ERROR = -4; // Some other errors
  * @returns array of size `nparts`, each contains vertex ids
  */
 export function partitionGraph(
-  adjacency: number[][],
+  adjacency: GraphNodeConnections[],
   nparts: number,
   opts: MetisOptions = {}
 ) {
-  const [xadj, adjncy] = createAdjacencyData(adjacency);
-  return partitionGraphImpl(xadj, adjncy, nparts, opts);
+  const [xadj, adjncy, adjwgt] = createAdjacencyData(adjacency);
+  return partitionGraphImpl(xadj, adjncy, adjwgt, nparts, opts);
 }
 
 /** Internal/test use mostly. Call `partitionGraph()` instead. */
 export async function partitionGraphImpl(
   xadj: number[],
   adjncy: number[],
+  adjwgt: number[],
   nparts: number,
   opts: MetisOptions = {}
 ) {
@@ -118,13 +125,10 @@ export async function partitionGraphImpl(
     i32Arr(adjncy), // idx_t *adjncy,
     null, // idx_t *vwgt,
     null, // idx_t *vsize,
-    // TODO [IGNORE] UE5 adjwgt: https://github.com/EpicGames/UnrealEngine/blob/ue5-main/Engine/Source/Developer/NaniteBuilder/Private/GraphPartitioner.cpp#L63
-    // https://youtu.be/eviSykqSUUw?si=GttgyFXof02ENUa4&t=1095
-    null, // idx_t *adjwgt,
+    i32Arr(adjwgt), // idx_t *adjwgt,
     i32(nparts), // idx_t *nparts,
     null, // real_t *tpwgts,
     null, // real_t *ubvec,
-    // TODO [IGNORE] UE5 options: https://github.com/EpicGames/UnrealEngine/blob/ue5-main/Engine/Source/Developer/NaniteBuilder/Private/GraphPartitioner.cpp#L50
     wasmPtr(options), // idx_t *options,
     wasmPtr(objval, 'out'), // idx_t *objval,
     wasmPtr(parts, 'out'), // idx_t *part
@@ -178,14 +182,19 @@ function checkErrCode(code: number) {
  *
  * That is, for each vertex i, its adjacency list is stored in consecutive locations in the array `adjncy`, and the array `xadj` is used to point to where it begins and where it ends.
  */
-export function createAdjacencyData(adjacency: number[][]) {
-  const adjncy: number[] = [];
+export function createAdjacencyData(adjacency: GraphNodeConnections[]) {
   const xadj: number[] = [0];
+  const adjncy: number[] = [];
+  const adjwgt: number[] = [];
 
   for (let i = 0; i < adjacency.length; i++) {
-    adjncy.push(...adjacency[i]);
+    const edges = adjacency[i];
+    edges.sort((a, b) => a.otherNodeIdx - b.otherNodeIdx);
+    adjncy.push(...edges.map((e) => e.otherNodeIdx));
+    adjwgt.push(...edges.map((e) => e.weight));
     xadj.push(adjncy.length);
   }
+  // console.log(adjacency);
 
-  return [xadj, adjncy];
+  return [xadj, adjncy, adjwgt];
 }
