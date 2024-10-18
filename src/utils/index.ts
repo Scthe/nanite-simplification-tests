@@ -1,4 +1,4 @@
-import { CO_PER_VERTEX, VERTS_IN_TRIANGLE } from '../constants.ts';
+import { CONFIG, CO_PER_VERTEX, VERTS_IN_TRIANGLE } from '../constants.ts';
 
 import './wasm-types.d.ts';
 
@@ -110,16 +110,25 @@ export function replaceFileExt(filePath: string, nextExt: string) {
   return `${fileRoot}${nextExt}`;
 }
 
-/** Get random between min (included) and max (excluded).
- * E.g. `randomIntFromInterval(1, 4)` can return one of: 1, 2, 3
- */
-export function randomIntFromInterval(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min) + min);
+/** https://stackoverflow.com/a/47593316 */
+function splitmix32(a: number) {
+  return function () {
+    a |= 0;
+    a = (a + 0x9e3779b9) | 0;
+    let t = a ^ (a >>> 16);
+    t = Math.imul(t, 0x21f0aaad);
+    t = t ^ (t >>> 15);
+    t = Math.imul(t, 0x735a2d97);
+    return ((t = t ^ (t >>> 15)) >>> 0) / 4294967296;
+  };
 }
+
+/** https://stackoverflow.com/a/47593316 */
+export const getRandom = splitmix32(CONFIG.nanite.seed);
 
 export function shuffleArray<T>(array: T[]) {
   for (let i = array.length - 1; i >= 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(getRandom() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
 }

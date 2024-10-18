@@ -172,8 +172,8 @@ export async function createNaniteMeshlets(
         ...childMeshletGroup.map((m) => m.maxSiblingsError)
       );
       const totalError = errorNow + childrenError;
-      // TODO Should be a sphere that encompass the child spheres.
-      //      "Smallest enclosing balls of balls" http://www.inf.ethz.ch/personal/emo/DoctThesisFiles/fischer05.pdf
+      // TODO Should be a sphere that encompass the child spheres,
+      //      see "Smallest enclosing balls of balls" by Bernd Gartner
       const bounds = calculateBounds(parsedMesh.positions, megaMeshlet.indices).sphere; // prettier-ignore
 
       // 2.3 [GROUP] split into new meshlets.
@@ -336,6 +336,7 @@ async function groupMeshletsMetis(
     const meshletIdxPerPart = await partitionGraph(adjacency, nparts, {
       // https://github.com/zeux/meshoptimizer/blob/c664ea295861242f018d3b72ed150acc2cf848c8/demo/nanite.cpp#L340
       [METIS_OPTION.UFACTOR]: 100,
+      [METIS_OPTION.SEED]: CONFIG.nanite.seed,
     });
 
     const meshletsCountPerPart = meshletIdxPerPart.map((e) => e.length);
@@ -428,14 +429,6 @@ async function simplify(
   const trianglesStillLeftToRemove = allowRemoveRandomTriangles
     ? Math.max(trianglesAfter - targetTriangleCount, 0)
     : 0;
-  /*if (trianglesStillLeftToRemove > 0) {
-    console.log({
-      intial: megaMeshlet.triangleCount,
-      targetTriangleCount,
-      trianglesAfter1stStep: trianglesAfter,
-      trianglesStillLeftToRemove,
-    });
-  }*/
 
   const trisRemoveResult = removeRandomTriangles(
     lodLevel,
@@ -443,14 +436,16 @@ async function simplify(
     simplifiedMesh.indexBuffer,
     trianglesStillLeftToRemove
   );
-  /*if (trianglesStillLeftToRemove > 0) {
-    console.log('errors', {
-      trianglesStillLeftToRemove,
-      simpl: simplifiedMesh.error,
-      rngTriRm: trisRemoveResult.error,
-      factor: simplifiedMesh.error / trisRemoveResult.error,
-    });
-  }*/
+  /*console.log('simplify stats', {
+    trianglesIntial: megaMeshlet.triangleCount,
+    targetTriangleCount,
+    trianglesAfter1stStep: trianglesAfter,
+    trianglesStillLeftToRemove,
+    trianglesAfterRngTrisRm: getTriangleCount(simplifiedMesh.indexBuffer),
+    // simpl: simplifiedMesh.error,
+    // rngTriRm: trisRemoveResult.error,
+    // factor: simplifiedMesh.error / trisRemoveResult.error,
+  });*/
   simplifiedMesh.error += trisRemoveResult.error;
   simplifiedMesh.indexBuffer = trisRemoveResult.indices;
 
@@ -466,7 +461,7 @@ async function simplify(
 
   if (
     preservedTrisFactor > requiredFactor &&
-    trianglesAfter !== targetTriangleCount
+    trianglesAfter > targetTriangleCount
   ) {
     // Simplification unsuccessful. This is OK for complicated objects
     // Current `childMeshlet` will become a root of the LOD tree.
@@ -590,19 +585,25 @@ function printFinalStats(allMeshlets: MeshletWIP[]) {
   const lodLevel = allMeshlets.reduce((acc, m) => Math.max(acc, m.lodLevel), 0);
 
   for (let i = 0; i < lodLevel + 1; i++) {
+    // const isLastLevel = i === lodLevel;
     const meshlets = allMeshlets.filter((e) => e.lodLevel === i);
     const trisCnt = getMeshletsTriangleCount(meshlets);
 
     // meshlet stats
     let fullyFilledCnt = 0;
     let halfFilledCnt = 0;
+    let rootsCnt = 0;
     meshlets.forEach((m) => {
       const tris = getTriangleCount(m.indices);
       fullyFilledCnt += tris === CFG.meshletMaxTriangles ? 1 : 0;
       halfFilledCnt += tris <= CFG.meshletMaxTriangles / 2 ? 1 : 0;
+      rootsCnt += isWIP_Root(m) ? 1 : 0;
     });
     const fullyFilledPct = formatPercentageNumber(fullyFilledCnt, meshlets.length) // prettier-ignore
     const halfFilledPct = formatPercentageNumber(halfFilledCnt, meshlets.length) // prettier-ignore
+
+    // roots stats
+    const rootsStr = rootsCnt > 0 ? `Contains ${rootsCnt} roots. ` : '';
 
     // tris rm stats
     const trisRngRemovedCnt = TRIS_REMOVED_PER_LEVEL[i];
@@ -612,7 +613,7 @@ function printFinalStats(allMeshlets: MeshletWIP[]) {
         : '';
 
     console.log(
-      `%cLevel ${i}: %c${meshlets.length} meshlets (${trisCnt} tris). Meshlets: ${fullyFilledPct} fully filled, ${halfFilledPct} half filled. ${trisRngRemovedCntStr}`, // prettier-ignore
+      `%cLevel ${i}: %c${meshlets.length} meshlets (${trisCnt} tris). Meshlets: ${fullyFilledPct} fully filled, ${halfFilledPct} barely filled. ${rootsStr}${trisRngRemovedCntStr}`, // prettier-ignore
       'color: blue',
       'color: default'
     );

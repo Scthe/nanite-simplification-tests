@@ -44,15 +44,16 @@ export const CONFIG = {
   ///////////////
   /// NANITE
   nanite: {
+    seed: 123, // https://www.youtube.com/watch?v=h8MHXfH6Mwk (I HATE "Hitchhikers Guide ...")
     meshletMaxVertices: 255,
     meshletMaxTriangles: 128,
     meshletBackfaceCullingConeWeight: 0.0, // cone culling
     /** Reduce triangle count per each level. */
     simplificationDecimateFactor: 2,
     /** Simplification will round up target tris count to $meshletMaxTriangles.
-     * Does not matter that much in practice as meshoptimizer can split 256 tris into 3 meshlets of [120, 128, 8] tris. We could greedy merge them, but there might be a reason for such split e.g. all 3 meshlets do not share any vertex. They might be even spread apart and the combined bounding sphere would be big (harder to cull).
+     * Does not matter that much in practice (!) as meshoptimizer can split 256 tris into 3 meshlets of [120, 128, 8] tris. We could greedy merge them, but there might be a reason for such split e.g. all 3 meshlets do not share any vertex. They might be even spread apart and the combined bounding sphere would be big (harder to cull).
      *
-     * Usually this adds few nodes, a LOD level or 2. But it should RNG-remove triangles more uniformly between levels. */
+     * Usually this adds few nodes, a LOD level or 2 (and sometimes much, much more). But it should RNG-remove triangles more uniformly between levels. */
     simplificationDecimateRoundToMeshlet: false,
     /** target_error for meshoptimizer */
     simplificationTargetError: 3.40282347e30, // close enough to 32-bit float MAX. JS has unusual number representation

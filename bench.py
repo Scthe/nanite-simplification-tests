@@ -4,17 +4,30 @@ import sys
 import re
 import os.path
 
+# fmt: off
 BENCH_VARIANTS = [
-    ("border-geometric no-rng-tris-remove", ""),
-    ("border-geometric", "-rngTrisRemove"),
-    ("", "-rngTrisRemove-meshletBorder"),
-    ("32", "-rngTrisRemove-meshletBorder-32"),
-    ("decimate-round-to-meshlet", "-rngTrisRemove-meshletBorder-roundUpTrisTo128"),
-    (
-        "decimate-round-to-meshlet 32",
-        "-rngTrisRemove-meshletBorder-roundUpTrisTo128-32",
-    ),
+    ##################
+    # variants with geometric border defintion
+    ("border-geometric no-rng-tris-remove", "-geometricBorder"),
+    ("border-geometric", "-geometricBorder-rngTrisRemove"),
+    ("border-geometric no-rng-tris-remove 32", "-geometricBorder-32"),
+    
+    ##################
+    # variants without rng tris remove
+    ("no-rng-tris-remove", ""),
+    ("no-rng-tris-remove 32", "-32"),
+
+    ##################
+    # variants with rng tris remove
+    ("", "-rngTrisRemove"),
+    ("32", "-rngTrisRemove-32"),
+
+    ##################
+    # variants with roundUpTrisTo128:
+    ("decimate-round-to-meshlet", "-rngTrisRemove-roundUpTrisTo128"),
+    ("decimate-round-to-meshlet 32", "-rngTrisRemove-roundUpTrisTo128-32"),
 ]
+# fmt: on
 
 BENCH_FILES = {
     "jinx": "jinx-combined.obj",
@@ -23,7 +36,7 @@ BENCH_FILES = {
 }
 
 
-# $(DENO) task start robot.obj decimate-round-to-meshlet 32 > "-rngTrisRemove-meshletBorder-roundUpTrisTo128-32"
+# $(DENO) task start robot.obj decimate-round-to-meshlet 32 > "-rngTrisRemove-roundUpTrisTo128-32"
 
 
 def get_deno_path():

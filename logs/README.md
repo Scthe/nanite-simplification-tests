@@ -13,12 +13,12 @@ Each filename contains special attributes describing used simplification options
 
 * `rngTrisRemove`. With random triangle removal.
     * **Verdict:** No other choice if you want a perfect DAG?
-* `meshletBorder`. Border defined as vertices shared between meshlets.
-    * Without this setting, border is defined as vertices on non-internal edges ("geometric" definition)
-    * **Verdict:** Mandatory.
+* `geometricBorder`. Border defined as vertices on non-internal edges ("geometric" definition).
+    * Without this setting, border is defined as vertices shared between meshlets.
+    * **Verdict:** Do not use the geometric border definiton. Always manually check which vertices are shared with other meshlets.
 * `roundUpTrisTo128`. After dividing triangle count by 2, `ceil()` it to the nearest 128 triangles.
     * Adds a few meshlets and LOD levels. If you have 10 vs 4 meshlets at e.g. LOD level 6 will make a huge difference in total LOD level count. LOD level count by itself is a flawed metric. For some meshes this will make 0 difference.
-    * **Verdict:** Works best for lower merge group size. Just see [src/constants.ts](../src/constants.ts).
+    * **Verdict:** Works best for lower merge group size, but not amazing. Just see [src/constants.ts](../src/constants.ts).
 * `32`. Merge 32 meshlets instead of 4.
     * **Verdict:** Mandatory. Exact value TBD, can be adaptive based on level's meshlet count.
     * See meshoptimizer's original [implementation](https://github.com/zeux/meshoptimizer/blob/master/demo/nanite.cpp).
