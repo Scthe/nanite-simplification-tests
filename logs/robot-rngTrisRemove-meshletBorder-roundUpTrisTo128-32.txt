@@ -1,0 +1,1109 @@
+[0m[32mTask[0m [0m[36mstart[0m DENO_NO_PACKAGE_JSON=1 && deno run --allow-read=. --allow-write=. --unstable-webgpu src/index.deno.ts "robot.obj" "decimate-round-to-meshlet" "32"
+Cmd args: [decimate-round-to-meshlet|32]
+CONFIG {
+  meshletMaxVertices: 255,
+  meshletMaxTriangles: 128,
+  meshletBackfaceCullingConeWeight: 0,
+  simplificationDecimateFactor: 2,
+  simplificationDecimateRoundToMeshlet: true,
+  simplificationTargetError: 3.40282347e+30,
+  allowRemoveRandomTriangles: true,
+  mergeGroupSize: 32,
+  border: "meshlets",
+  maxLods: 50,
+  useMapToFindAdjacentEdges: true
+}
+Loading file: 'robot.obj'
+Object '': 547936 vertices, 906558 triangles
+Bounding box min: [-0.27, -0.03, -0.18]
+Bounding box max: [0.27, 1.71, 0.18]
+
+Creating LOD level 1. Starting with 7083 meshlets (906558 triangles).
+    There are 89 (40.1%) parts after METIS split with more meshlets than 32. This is just how METIS works.
+    Partitioned into 222 groups of ~32 meshlets
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 30 meshlets (3838 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,127])
+    	Simplify (intial=3838 into target=1920 tris), got 1920 tris (50.03%). PERFECT
+    	Split into 16 meshlets, expected 15
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4349 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,128,128,128,128,128,128,128,128,128,128,128,128,128,127,127,128,128])
+    	Simplify (intial=4349 into target=2176 tris), got 2175 tris (50.01%). PERFECT
+    	Split into 18 meshlets, expected 17
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3711 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,128,128,128])
+    	Simplify (intial=3711 into target=1920 tris), got 1919 tris (51.71%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    	Split into 16 meshlets, expected 15
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3908 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,68])
+    	Simplify (intial=3908 into target=2048 tris), got 2048 tris (52.41%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+
+Creating LOD level 2. Starting with 3608 meshlets (461438 triangles).
+    Previous level removed 445120 (49.1%) of the remaining triangles.
+    There are 45 (39.8%) parts after METIS split with more meshlets than 32. This is just how METIS works.
+    Partitioned into 113 groups of ~32 meshlets
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,128,1,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    	Split into 16 meshlets, expected 15
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (3967 tris: [127,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,1])
+    	Simplify (intial=3967 into target=2048 tris), got 2047 tris (51.60%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3967 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,128])
+    	Simplify (intial=3967 into target=2048 tris), got 2047 tris (51.60%). PERFECT
+    Merged meshlet created from 29 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,128,128,128,128,128,128,128,128,128,1,128,128,128])
+    	RNG triangle remove: 144
+    	Simplify (intial=3584 into target=1792 tris), got 1792 tris (50.00%). PERFECT
+    	Split into 15 meshlets, expected 14
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 35 meshlets (4480 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4480 into target=2304 tris), got 2304 tris (51.43%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+
+Creating LOD level 3. Starting with 1839 meshlets (235134 triangles).
+    Previous level removed 226304 (49.0%) of the remaining triangles.
+    There are 26 (44.8%) parts after METIS split with more meshlets than 32. This is just how METIS works.
+    Partitioned into 58 groups of ~32 meshlets
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4238 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,15])
+    	Simplify (intial=4238 into target=2176 tris), got 2174 tris (51.30%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 28 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3584 into target=1792 tris), got 1792 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 33 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,127,128,128,128,128,128,128,1,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 270
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    	Split into 17 meshlets, expected 16
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 28 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3584 into target=1792 tris), got 1792 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 28 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3584 into target=1792 tris), got 1792 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 28 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3584 into target=1792 tris), got 1792 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 28 meshlets (3568 tris: [128,128,128,128,128,128,128,128,127,128,128,123,122,124,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3568 into target=1792 tris), got 1792 tris (50.22%). PERFECT
+    	Split into 15 meshlets, expected 14
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2047 tris (49.98%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2046 tris (51.56%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 28 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3584 into target=1792 tris), got 1792 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 28 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3584 into target=1792 tris), got 1792 tris (50.00%). PERFECT
+
+Creating LOD level 4. Starting with 931 meshlets (118907 triangles).
+    Previous level removed 116227 (49.4%) of the remaining triangles.
+    There are 6 (20.0%) parts after METIS split with more meshlets than 32. This is just how METIS works.
+    Partitioned into 30 groups of ~32 meshlets
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4222 tris: [128,128,128,128,128,128,128,128,126,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4222 into target=2176 tris), got 2176 tris (51.54%). PERFECT
+    Merged meshlet created from 28 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3584 into target=1792 tris), got 1791 tris (49.97%). PERFECT
+    Merged meshlet created from 32 meshlets (3967 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,124,128,123,128,128,128,128,9,128,128,128,128,128,127])
+    	RNG triangle remove: 201
+    	Simplify (intial=3967 into target=2048 tris), got 2048 tris (51.63%). PERFECT
+    	Split into 17 meshlets, expected 16
+    Merged meshlet created from 32 meshlets (4095 tris: [128,128,128,127,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 315
+    	Simplify (intial=4095 into target=2048 tris), got 2048 tris (50.01%). PERFECT
+    	Split into 17 meshlets, expected 16
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2047 tris (49.98%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 28 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3584 into target=1792 tris), got 1792 tris (50.00%). PERFECT
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3839 tris: [128,127,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 739
+    	Simplify (intial=3839 into target=1920 tris), got 1920 tris (50.01%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 28 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3584 into target=1792 tris), got 1791 tris (49.97%). PERFECT
+    Merged meshlet created from 28 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3584 into target=1792 tris), got 1792 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 6
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 28 meshlets (3573 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,120,125,128,128,128,128])
+    	RNG triangle remove: 802
+    	Simplify (intial=3573 into target=1792 tris), got 1792 tris (50.15%). PERFECT
+    	Split into 15 meshlets, expected 14
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 524
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    Merged meshlet created from 31 meshlets (3851 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,11,128,128,128,128,128,128,128])
+    	Simplify (intial=3851 into target=2048 tris), got 2047 tris (53.16%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=2048 tris), got 2046 tris (51.56%). PERFECT
+
+Creating LOD level 5. Starting with 475 meshlets (60410 triangles).
+    Previous level removed 58497 (49.2%) of the remaining triangles.
+    There are 7 (46.7%) parts after METIS split with more meshlets than 32. This is just how METIS works.
+    Partitioned into 15 groups of ~32 meshlets
+    Merged meshlet created from 34 meshlets (4351 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,128,128,128,128,128,128])
+    	Simplify (intial=4351 into target=2176 tris), got 2176 tris (50.01%). PERFECT
+    Merged meshlet created from 28 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 537
+    	Simplify (intial=3584 into target=1792 tris), got 1792 tris (50.00%). PERFECT
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4224 into target=2176 tris), got 2175 tris (51.49%). PERFECT
+    Merged meshlet created from 33 meshlets (4223 tris: [128,128,128,128,128,128,128,128,128,128,128,128,127,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4223 into target=2176 tris), got 2175 tris (51.50%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3818 tris: [128,118,127,117,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3818 into target=1920 tris), got 1920 tris (50.29%). PERFECT
+    	Split into 16 meshlets, expected 15
+    Merged meshlet created from 33 meshlets (4096 tris: [128,123,123,128,127,128,121,128,128,122,24,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 2044
+    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    	Split into 18 meshlets, expected 16
+    Merged meshlet created from 34 meshlets (4245 tris: [128,128,125,128,128,126,27,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 1394
+    	Simplify (intial=4245 into target=2176 tris), got 2176 tris (51.26%). PERFECT
+    	Split into 18 meshlets, expected 17
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 770
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 204
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 872
+    	Simplify (intial=3968 into target=2048 tris), got 2048 tris (51.61%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 835
+    	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
+    Merged meshlet created from 30 meshlets (3709 tris: [128,128,128,128,128,128,128,128,113,113,128,121,122,107,128,128,111,81,128,128,128,128,128,128,128,128,127,128,128,126])
+    	RNG triangle remove: 1103
+    	Simplify (intial=3709 into target=1920 tris), got 1920 tris (51.77%). PERFECT
+    	Split into 16 meshlets, expected 15
+    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 447
+    	Simplify (intial=3712 into target=1920 tris), got 1920 tris (51.72%). PERFECT
+
+Creating LOD level 6. Starting with 244 meshlets (30590 triangles).
+    Previous level removed 29820 (49.4%) of the remaining triangles.
+    There are 2 (25.0%) parts after METIS split with more meshlets than 32. This is just how METIS works.
+    Partitioned into 8 groups of ~32 meshlets
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 1903
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    	Split into 18 meshlets, expected 17
+    Merged meshlet created from 29 meshlets (3464 tris: [115,115,109,99,101,122,128,118,128,122,124,118,120,29,128,128,128,128,128,128,128,128,128,128,128,124,128,128,128])
+    	RNG triangle remove: 1665
+    	Simplify (intial=3464 into target=1792 tris), got 1792 tris (51.73%). PERFECT
+    	Split into 17 meshlets, expected 14
+    Merged meshlet created from 29 meshlets (3584 tris: [128,128,128,119,119,109,105,128,112,107,128,128,128,128,128,128,97,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 1762
+    	Simplify (intial=3584 into target=1792 tris), got 1792 tris (50.00%). PERFECT
+    	Split into 16 meshlets, expected 14
+    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 1977
+    	Simplify (intial=4224 into target=2176 tris), got 2176 tris (51.52%). PERFECT
+    	Split into 18 meshlets, expected 17
+    Merged meshlet created from 30 meshlets (3839 tris: [128,128,128,128,128,128,128,128,128,128,127,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 311
+    	Simplify (intial=3839 into target=1920 tris), got 1920 tris (50.01%). PERFECT
+    Merged meshlet created from 30 meshlets (3734 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,22])
+    	RNG triangle remove: 349
+    	Simplify (intial=3734 into target=1920 tris), got 1920 tris (51.42%). PERFECT
+    Merged meshlet created from 32 meshlets (4083 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,123,121,128,128])
+    	RNG triangle remove: 1581
+    	Simplify (intial=4083 into target=2048 tris), got 2048 tris (50.16%). PERFECT
+    	Split into 17 meshlets, expected 16
+    Merged meshlet created from 28 meshlets (3438 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,126,123,113,128,122,104,34])
+    	RNG triangle remove: 960
+    	Simplify (intial=3438 into target=1792 tris), got 1792 tris (52.12%). PERFECT
+    	Split into 15 meshlets, expected 14
+
+Creating LOD level 7. Starting with 131 meshlets (15616 triangles).
+    Previous level removed 14974 (49.0%) of the remaining triangles.
+    Partitioned into 5 groups of ~32 meshlets
+    Merged meshlet created from 25 meshlets (3146 tris: [93,128,128,128,128,128,128,128,128,128,121,128,126,128,128,128,128,128,128,128,128,128,128,128,118])
+    	RNG triangle remove: 1452
+    	Simplify (intial=3146 into target=1664 tris), got 1664 tris (52.89%). PERFECT
+    	Split into 15 meshlets, expected 13
+    Merged meshlet created from 26 meshlets (2649 tris: [33,105,120,101,103,122,124,119,114,119,105,102,105,102,102,42,119,125,107,109,49,104,100,105,119,94])
+    	RNG triangle remove: 1240
+    	Simplify (intial=2649 into target=1408 tris), got 1408 tris (53.15%). PERFECT
+    	Split into 15 meshlets, expected 11
+    Merged meshlet created from 28 meshlets (3584 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	RNG triangle remove: 1591
+    	Simplify (intial=3584 into target=1792 tris), got 1792 tris (50.00%). PERFECT
+    	Split into 15 meshlets, expected 14
+    Merged meshlet created from 28 meshlets (3419 tris: [128,128,128,125,128,128,124,128,128,128,128,128,121,126,128,128,111,114,121,118,128,128,128,125,118,122,120,54])
+    	RNG triangle remove: 1585
+    	Simplify (intial=3419 into target=1792 tris), got 1792 tris (52.41%). PERFECT
+    	Split into 17 meshlets, expected 14
+    Merged meshlet created from 24 meshlets (2818 tris: [112,94,114,127,127,128,128,128,122,119,97,128,120,9,124,126,128,122,128,127,128,126,128,128])
+    	RNG triangle remove: 1251
+    	Simplify (intial=2818 into target=1536 tris), got 1536 tris (54.51%). PERFECT
+    	Split into 15 meshlets, expected 12
+
+Creating LOD level 8. Starting with 77 meshlets (8192 triangles).
+    Previous level removed 7424 (47.5%) of the remaining triangles.
+    Partitioned into 3 groups of ~32 meshlets
+    Merged meshlet created from 25 meshlets (2658 tris: [128,121,119,116,112,118,128,127,122,113,111,111,114,100,24,96,91,101,94,103,104,92,108,105,100])
+    	RNG triangle remove: 1238
+    	Simplify (intial=2658 into target=1408 tris), got 1408 tris (52.97%). PERFECT
+    	Split into 15 meshlets, expected 11
+    Merged meshlet created from 24 meshlets (2765 tris: [128,128,128,128,128,128,128,128,128,128,128,121,128,121,14,107,94,92,109,128,121,117,105,100])
+    	RNG triangle remove: 1339
+    	Simplify (intial=2765 into target=1408 tris), got 1408 tris (50.92%). PERFECT
+    	Split into 14 meshlets, expected 11
+    Merged meshlet created from 28 meshlets (2769 tris: [104,100,95,92,23,109,113,113,110,105,110,110,109,114,103,101,107,110,110,115,98,55,105,111,99,111,101,36])
+    	RNG triangle remove: 1329
+    	Simplify (intial=2769 into target=1408 tris), got 1408 tris (50.85%). PERFECT
+    	Split into 15 meshlets, expected 11
+
+Creating LOD level 9. Starting with 44 meshlets (4224 triangles).
+    Previous level removed 3968 (48.4%) of the remaining triangles.
+    Partitioned into 2 groups of ~32 meshlets
+    Merged meshlet created from 24 meshlets (2361 tris: [90,95,116,124,104,116,117,112,112,108,99,94,92,29,97,94,99,98,97,97,90,96,92,93])
+    	RNG triangle remove: 1055
+    	Simplify (intial=2361 into target=1280 tris), got 1280 tris (54.21%). PERFECT
+    	Split into 14 meshlets, expected 10
+    Merged meshlet created from 20 meshlets (1863 tris: [108,101,100,110,101,99,93,94,89,96,98,91,96,100,32,95,97,96,90,77])
+    	RNG triangle remove: 828
+    	Simplify (intial=1863 into target=1024 tris), got 1024 tris (54.97%). PERFECT
+    	Split into 12 meshlets, expected 8
+
+Creating LOD level 10. Starting with 26 meshlets (2304 triangles).
+    Previous level removed 1920 (45.5%) of the remaining triangles.
+    Partitioned into 1 groups of ~32 meshlets
+    Merged meshlet created from 26 meshlets (2304 tris: [87,93,89,100,98,104,95,99,95,92,93,90,87,58,96,93,94,92,93,88,87,90,92,90,90,19])
+    	RNG triangle remove: 1139
+    	Simplify (intial=2304 into target=1152 tris), got 1152 tris (50.00%). PERFECT
+    	Split into 13 meshlets, expected 9
+
+Creating LOD level 11. Starting with 13 meshlets (1152 triangles).
+    Previous level removed 1152 (50.0%) of the remaining triangles.
+    Partitioned into 1 groups of ~32 meshlets
+    Merged meshlet created from 13 meshlets (1152 tris: [90,87,87,86,87,89,89,92,92,94,89,87,83])
+    	RNG triangle remove: 507
+    	Simplify (intial=1152 into target=640 tris), got 640 tris (55.56%). PERFECT
+    	Split into 8 meshlets, expected 5
+
+Creating LOD level 12. Starting with 8 meshlets (640 triangles).
+    Previous level removed 512 (44.4%) of the remaining triangles.
+    Partitioned into 1 groups of ~32 meshlets
+    Merged meshlet created from 8 meshlets (640 tris: [88,86,87,86,88,89,86,30])
+    	RNG triangle remove: 255
+    	Simplify (intial=640 into target=384 tris), got 384 tris (60.00%). PERFECT
+    	Split into 5 meshlets, expected 3
+
+Creating LOD level 13. Starting with 5 meshlets (384 triangles).
+    Previous level removed 256 (40.0%) of the remaining triangles.
+    Partitioned into 1 groups of ~32 meshlets
+    Merged meshlet created from 5 meshlets (384 tris: [86,86,86,85,41])
+    	RNG triangle remove: 128
+    	Simplify (intial=384 into target=256 tris), got 256 tris (66.67%). PERFECT
+    	Split into 3 meshlets, expected 2
+
+Creating LOD level 14. Starting with 3 meshlets (256 triangles).
+    Previous level removed 128 (33.3%) of the remaining triangles.
+    Partitioned into 1 groups of ~32 meshlets
+    Merged meshlet created from 3 meshlets (256 tris: [86,86,84])
+    	RNG triangle remove: 126
+    	Simplify (intial=256 into target=128 tris), got 128 tris (50.00%). PERFECT
+    	Split into 2 meshlets, expected 1
+
+Creating LOD level 15. Starting with 2 meshlets (128 triangles).
+    Previous level removed 128 (50.0%) of the remaining triangles.
+    Partitioned into 1 groups of ~32 meshlets
+    Merged meshlet created from 2 meshlets (128 tris: [85,43])
+    	RNG triangle remove: 64
+    	Simplify (intial=128 into target=64 tris), got 64 tris (50.00%). PERFECT
+    Reached last meshlet. Creating root node
+
+------------- SUMMARY -------------
+Level 0: 7083 meshlets (906558 tris). Meshlets: 7076 (99.9%) fully filled, 0 (0.0%) half filled. 
+Level 1: 3608 meshlets (461438 tris). Meshlets: 3600 (99.8%) fully filled, 3 (0.1%) half filled. 
+Level 2: 1839 meshlets (235134 tris). Meshlets: 1831 (99.6%) fully filled, 2 (0.1%) half filled. RNG tris removed: 144 (0.1%).
+Level 3: 931 meshlets (118907 tris). Meshlets: 921 (98.9%) fully filled, 2 (0.2%) half filled. RNG tris removed: 270 (0.2%).
+Level 4: 475 meshlets (60410 tris). Meshlets: 451 (94.9%) fully filled, 2 (0.4%) half filled. RNG tris removed: 2587 (4.3%).
+Level 5: 244 meshlets (30590 tris). Meshlets: 213 (87.3%) fully filled, 3 (1.2%) half filled. RNG tris removed: 8206 (26.8%).
+Level 6: 131 meshlets (15616 tris). Meshlets: 73 (55.7%) fully filled, 5 (3.8%) half filled. RNG tris removed: 10508 (67.3%).
+Level 7: 77 meshlets (8192 tris). Meshlets: 15 (19.5%) fully filled, 5 (6.5%) half filled. RNG tris removed: 7119 (86.9%).
+Level 8: 44 meshlets (4224 tris). Meshlets: 0 (0.0%) fully filled, 2 (4.5%) half filled. RNG tris removed: 3906 (92.5%).
+Level 9: 26 meshlets (2304 tris). Meshlets: 0 (0.0%) fully filled, 2 (7.7%) half filled. RNG tris removed: 1883 (81.7%).
+Level 10: 13 meshlets (1152 tris). Meshlets: 0 (0.0%) fully filled, 0 (0.0%) half filled. RNG tris removed: 1139 (98.9%).
+Level 11: 8 meshlets (640 tris). Meshlets: 0 (0.0%) fully filled, 1 (12.5%) half filled. RNG tris removed: 507 (79.2%).
+Level 12: 5 meshlets (384 tris). Meshlets: 0 (0.0%) fully filled, 1 (20.0%) half filled. RNG tris removed: 255 (66.4%).
+Level 13: 3 meshlets (256 tris). Meshlets: 0 (0.0%) fully filled, 0 (0.0%) half filled. RNG tris removed: 128 (50.0%).
+Level 14: 2 meshlets (128 tris). Meshlets: 0 (0.0%) fully filled, 1 (50.0%) half filled. RNG tris removed: 126 (98.4%).
+Level 15: 1 meshlets (64 tris). Meshlets: 0 (0.0%) fully filled, 1 (100.0%) half filled. RNG tris removed: 64 (100.0%).
+Total RNG tris removed: 36842 (2.0%)
+
+Created 16 LOD levels. Total 14490 meshlets.
+There are 7083 bottom level meshlets with 906558 triangles.
+There are 1 root meshlets with 64 triangles.
+Best case renders only 0.0% triangles.
