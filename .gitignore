@@ -42,6 +42,7 @@ dbg-obj/*.obj
 # custom
 *.code-workspace
 _references
+libs/meshoptimizer/js-my
 
 # logs
 logs/bunny*

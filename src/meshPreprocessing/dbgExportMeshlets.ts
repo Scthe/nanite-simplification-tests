@@ -6,6 +6,11 @@ interface MeshletDbg {
   lockedVerticesIds: Set<number>;
 }
 
+const DEFAULT_MESHLET_OPTS = {
+  lockedVerticesIds: new Set<number>(),
+  name: 'meshlet',
+};
+
 export class DbgMeshletExporter {
   private meshlets: MeshletDbg[] = [];
 
@@ -16,13 +21,13 @@ export class DbgMeshletExporter {
 
   addMeshlet(
     indices: Uint32Array,
-    lockedVerticesIds: Set<number> = new Set(),
-    name = 'meshlet'
+    opts: Partial<typeof DEFAULT_MESHLET_OPTS> = {}
   ) {
+    const opts2 = { ...DEFAULT_MESHLET_OPTS, ...opts };
     this.meshlets.push({
-      name: `${name}-${this.meshlets.length}`,
-      indices,
-      lockedVerticesIds,
+      name: `${opts2.name}-${this.meshlets.length}`,
+      indices: indices.slice(), // make copy
+      lockedVerticesIds: opts2.lockedVerticesIds,
     });
     /*
     const dumpAfter = 5;
@@ -34,6 +39,8 @@ export class DbgMeshletExporter {
   }
 
   async write(filePath: string = 'meshlet') {
+    if (this.meshlets.length === 0) return;
+
     filePath = `dbg-obj/${this.prefix}-${filePath}.obj`;
     console.log(`EXPORTING: '${filePath}' - ${this.meshlets.length} meshlets`);
     const lines: string[] = [];

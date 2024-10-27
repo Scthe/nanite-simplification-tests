@@ -38,3 +38,13 @@ benchmark-jinx:
 	$(DENO) task start jinx-combined.obj 32 > "logs\jinx-rngTrisRemove-meshletBorder-32.txt"
 	$(DENO) task start jinx-combined.obj decimate-round-to-meshlet > "logs\jinx-rngTrisRemove-meshletBorder-roundUpTrisTo128.txt"
 	$(DENO) task start jinx-combined.obj decimate-round-to-meshlet 32 > "logs\jinx-rngTrisRemove-meshletBorder-roundUpTrisTo128-32.txt"
+
+##############################
+### Dependencies
+
+dep-meshoptimizer:
+	mkdir -p "libs/meshoptimizer/js-my"
+	cp "meshoptimizer-emscripten.bat" "libs/meshoptimizer/js-my/meshoptimizer-emscripten.bat"
+	cd "libs/meshoptimizer" && "js-my/meshoptimizer-emscripten.bat"
+	cp "libs/meshoptimizer/js-my/meshoptimizer.wasm" "static/meshoptimizer.wasm"
+	cp "libs/meshoptimizer/js-my/meshoptimizer.js" "src/lib/meshoptimizer.js"

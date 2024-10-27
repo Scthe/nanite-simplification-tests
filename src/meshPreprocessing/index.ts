@@ -40,11 +40,11 @@ const MINIMAL_SIMPLICATION_ERROR = 0.000000001;
 let NEXT_MESHLET_ID = 0;
 let exporter: DbgMeshletExporter = undefined!;
 
-/*function exportMeshletWIP(m: MeshletWIP) {
-  const edges = Array.from(m.sharedEdges);
-  const boundsVertices = edges.map(getEdgeVertices).flat();
-  exporter.addMeshlet(m.indices, new Set(boundsVertices));
-}*/
+function exportMeshletWIP(m: Pick<MeshletWIP, 'indices' | 'lodLevel' | 'id'>) {
+  // const edges = Array.from(m.sharedEdges);
+  // const boundsVertices = edges.map(getEdgeVertices).flat();
+  exporter.addMeshlet(m.indices, { name: `meshlet-${m.lodLevel}-${m.id}` });
+}
 
 const TRIS_REMOVED_PER_LEVEL: Record<number, number> = {};
 
@@ -210,10 +210,10 @@ export async function createNaniteMeshlets(
     console.groupEnd();
   }
 
-  const root = currentMeshlets[0];
+  // const root = currentMeshlets[0];
   // exportMeshletWIP(root);
   // root.createdFrom.forEach(exportMeshletWIP);
-  // await exporter.write();
+  await exporter.write();
 
   // export all, level by level
   /*let i = 0;
@@ -524,6 +524,7 @@ function removeRandomTriangles(
   if (trianglesToRemoveCnt <= 0) {
     return { indices: indexBuffer, error: 0 };
   }
+  // exportMeshletWIP({ lodLevel, id: NEXT_MESHLET_ID, indices: indexBuffer });
   console.log(`%c\tRNG triangle remove: ${trianglesToRemoveCnt}`, 'color: red');
   addStatsTrisRngRemoved(lodLevel, trianglesToRemoveCnt);
 
