@@ -22,114 +22,112 @@ Bounding box max: [0.39, 1.63, 0.59]
 Creating LOD level 1. Starting with 348 meshlets (44443 triangles).
     There are 3 (27.3%) parts after METIS split with more meshlets than 32. This is just how METIS works.
     Partitioned into 11 groups of ~32 meshlets
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3968 into target=1984 tris), got 1982 tris (49.95%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
+    Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=4352 into target=2176 tris), got 2175 tris (49.98%). PERFECT
     Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
-    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
+    	Simplify (intial=4096 into target=2048 tris), got 2047 tris (49.98%). PERFECT
+    Merged meshlet created from 30 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3840 into target=1920 tris), got 1919 tris (49.97%). PERFECT
     Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
     	Simplify (intial=3968 into target=1984 tris), got 1984 tris (50.00%). PERFECT
     Merged meshlet created from 34 meshlets (4352 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
     	Simplify (intial=4352 into target=2176 tris), got 2176 tris (50.00%). PERFECT
-    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
-    	Simplify (intial=3712 into target=1856 tris), got 1856 tris (50.00%). PERFECT
-    Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
-    	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
-    Merged meshlet created from 30 meshlets (3739 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,27])
-    	Simplify (intial=3739 into target=1869 tris), got 1869 tris (49.99%). PERFECT
-    Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
-    	Simplify (intial=4224 into target=2112 tris), got 2112 tris (50.00%). PERFECT
-    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
-    	Simplify (intial=3968 into target=1984 tris), got 1983 tris (49.97%). PERFECT
     Merged meshlet created from 32 meshlets (4096 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
     	Simplify (intial=4096 into target=2048 tris), got 2048 tris (50.00%). PERFECT
     Merged meshlet created from 33 meshlets (4224 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
     	Simplify (intial=4224 into target=2112 tris), got 2112 tris (50.00%). PERFECT
-    Merged meshlet created from 31 meshlets (3968 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
-    	Simplify (intial=3968 into target=1984 tris), got 1984 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3867 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,27])
+    	Simplify (intial=3867 into target=1933 tris), got 1933 tris (49.99%). PERFECT
 
-Creating LOD level 2. Starting with 177 meshlets (22220 triangles).
-    Previous level removed 22223 (50.0%) of the remaining triangles.
+Creating LOD level 2. Starting with 176 meshlets (22216 triangles).
+    Previous level removed 22227 (50.0%) of the remaining triangles.
     Partitioned into 6 groups of ~32 meshlets
-    Merged meshlet created from 29 meshlets (3596 tris: [128,128,128,128,128,77,128,128,128,128,128,128,128,128,128,128,128,63,128,128,128,128,128,128,128,128,128,128,128])
-    	Simplify (intial=3596 into target=1798 tris), got 1798 tris (50.00%). PERFECT
-    Merged meshlet created from 28 meshlets (3520 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,64,128,128,128,128,128])
-    	Simplify (intial=3520 into target=1760 tris), got 1759 tris (49.97%). PERFECT
-    Merged meshlet created from 31 meshlets (3840 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,64,128,128,128,128,128,128,128,128,128,128,128,64])
-    	Simplify (intial=3840 into target=1920 tris), got 1920 tris (50.00%). PERFECT
-    Merged meshlet created from 29 meshlets (3712 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
-    	Simplify (intial=3712 into target=1856 tris), got 1856 tris (50.00%). PERFECT
-    Merged meshlet created from 30 meshlets (3776 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,64,128,128,128])
-    	Simplify (intial=3776 into target=1888 tris), got 1888 tris (50.00%). PERFECT
-    Merged meshlet created from 30 meshlets (3776 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,64,128,128,128,128,128])
-    	Simplify (intial=3776 into target=1888 tris), got 1887 tris (49.97%). PERFECT
+    Merged meshlet created from 26 meshlets (3262 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,62,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3262 into target=1631 tris), got 1631 tris (50.00%). PERFECT
+    Merged meshlet created from 32 meshlets (4095 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,128,128,128,128])
+    	Simplify (intial=4095 into target=2047 tris), got 2046 tris (49.96%). PERFECT
+    Merged meshlet created from 28 meshlets (3583 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,127,128,128,128,128,128])
+    	Simplify (intial=3583 into target=1791 tris), got 1790 tris (49.96%). PERFECT
+    Merged meshlet created from 28 meshlets (3520 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,64,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3520 into target=1760 tris), got 1760 tris (50.00%). PERFECT
+    Merged meshlet created from 31 meshlets (3789 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,64,128,128,128,128,128,128,128,128,128,128,128,128,128,13])
+    	Simplify (intial=3789 into target=1894 tris), got 1894 tris (49.99%). PERFECT
+    Merged meshlet created from 31 meshlets (3967 tris: [128,128,128,128,128,128,128,128,128,128,128,128,127,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=3967 into target=1983 tris), got 1981 tris (49.94%). PERFECT
 
-Creating LOD level 3. Starting with 89 meshlets (11108 triangles).
-    Previous level removed 11112 (50.0%) of the remaining triangles.
+Creating LOD level 3. Starting with 88 meshlets (11102 triangles).
+    Previous level removed 11114 (50.0%) of the remaining triangles.
     Partitioned into 3 groups of ~32 meshlets
-    Merged meshlet created from 31 meshlets (3872 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,64,128,128,128,128,128,128,128,128,128,96,128,128,128,128,128,128])
-    	Simplify (intial=3872 into target=1936 tris), got 1936 tris (50.00%). PERFECT
-    Merged meshlet created from 29 meshlets (3557 tris: [128,128,128,128,6,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,95])
-    	Simplify (intial=3557 into target=1778 tris), got 1778 tris (49.99%). PERFECT
-    Merged meshlet created from 29 meshlets (3679 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,95,128,128,128,128,128])
-    	Simplify (intial=3679 into target=1839 tris), got 1835 tris (49.88%). PERFECT
+    Merged meshlet created from 29 meshlets (3613 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,96,128,128,128,128,128,128,128,128,128,128,128,128,128,128,61])
+    	Simplify (intial=3613 into target=1806 tris), got 1805 tris (49.96%). PERFECT
+    Merged meshlet created from 29 meshlets (3686 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,102,128])
+    	Simplify (intial=3686 into target=1843 tris), got 1842 tris (49.97%). PERFECT
+    Merged meshlet created from 30 meshlets (3803 tris: [128,128,95,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,126,128,128,128,128,128,128,128,128,128,128,126])
+    	Simplify (intial=3803 into target=1901 tris), got 1900 tris (49.96%). PERFECT
 
-Creating LOD level 4. Starting with 45 meshlets (5549 triangles).
-    Previous level removed 5559 (50.0%) of the remaining triangles.
+Creating LOD level 4. Starting with 45 meshlets (5547 triangles).
+    Previous level removed 5555 (50.0%) of the remaining triangles.
     Partitioned into 2 groups of ~32 meshlets
-    Merged meshlet created from 24 meshlets (2987 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,43])
-    	Simplify (intial=2987 into target=1493 tris), got 1491 tris (49.92%). PERFECT
-    Merged meshlet created from 21 meshlets (2562 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,128,16,128,128,128,128,114])
-    	Simplify (intial=2562 into target=1281 tris), got 1280 tris (49.96%). PERFECT
+    Merged meshlet created from 21 meshlets (2590 tris: [128,128,128,128,128,128,128,128,128,128,128,50,128,128,128,128,128,128,128,128,108])
+    	Simplify (intial=2590 into target=1295 tris), got 1295 tris (50.00%). PERFECT
+    Merged meshlet created from 24 meshlets (2957 tris: [128,128,128,128,128,128,128,128,128,128,128,128,128,128,13,128,128,128,128,128,128,128,128,128])
+    	Simplify (intial=2957 into target=1478 tris), got 1478 tris (49.98%). PERFECT
 
-Creating LOD level 5. Starting with 22 meshlets (2771 triangles).
-    Previous level removed 2778 (50.1%) of the remaining triangles.
+Creating LOD level 5. Starting with 23 meshlets (2773 triangles).
+    Previous level removed 2774 (50.0%) of the remaining triangles.
     Partitioned into 1 groups of ~32 meshlets
-    Merged meshlet created from 22 meshlets (2771 tris: [128,128,128,128,128,128,128,128,128,128,128,83,128,128,128,128,128,128,128,128,128,128])
-    	RNG triangle remove: 135
-    	Simplify (intial=2771 into target=1385 tris), got 1385 tris (49.98%). PERFECT
+    Merged meshlet created from 23 meshlets (2773 tris: [128,128,128,128,128,128,128,128,128,128,15,128,128,128,128,128,128,128,128,128,128,128,70])
+    	Simplify (intial=2773 into target=1386 tris), got 1385 tris (49.95%). PERFECT
 
 Creating LOD level 6. Starting with 11 meshlets (1385 triangles).
-    Previous level removed 1386 (50.0%) of the remaining triangles.
+    Previous level removed 1388 (50.1%) of the remaining triangles.
     Partitioned into 1 groups of ~32 meshlets
     Merged meshlet created from 11 meshlets (1385 tris: [128,128,128,128,128,128,128,128,128,128,105])
-    	RNG triangle remove: 689
+    	RNG triangle remove: 155
     	Simplify (intial=1385 into target=692 tris), got 692 tris (49.96%). PERFECT
 
 Creating LOD level 7. Starting with 6 meshlets (692 triangles).
     Previous level removed 693 (50.0%) of the remaining triangles.
     Partitioned into 1 groups of ~32 meshlets
     Merged meshlet created from 6 meshlets (692 tris: [128,128,128,128,128,52])
-    	RNG triangle remove: 328
+    	RNG triangle remove: 303
     	Simplify (intial=692 into target=346 tris), got 346 tris (50.00%). PERFECT
-    	Split into 4 meshlets, expected 3
 
-Creating LOD level 8. Starting with 4 meshlets (346 triangles).
+Creating LOD level 8. Starting with 3 meshlets (346 triangles).
     Previous level removed 346 (50.0%) of the remaining triangles.
     Partitioned into 1 groups of ~32 meshlets
-    Merged meshlet created from 4 meshlets (346 tris: [122,108,101,15])
-    	RNG triangle remove: 152
+    Merged meshlet created from 3 meshlets (346 tris: [128,128,90])
+    	RNG triangle remove: 136
     	Simplify (intial=346 into target=173 tris), got 173 tris (50.00%). PERFECT
 
 Creating LOD level 9. Starting with 2 meshlets (173 triangles).
     Previous level removed 173 (50.0%) of the remaining triangles.
     Partitioned into 1 groups of ~32 meshlets
-    Merged meshlet created from 2 meshlets (173 tris: [99,74])
-    	RNG triangle remove: 83
+    Merged meshlet created from 2 meshlets (173 tris: [123,50])
+    	RNG triangle remove: 77
     	Simplify (intial=173 into target=86 tris), got 86 tris (49.71%). PERFECT
     Reached last meshlet. Creating root node
 
 ------------- SUMMARY -------------
 Level 0: 348 meshlets (44443 tris). Meshlets: 347 (99.7%) fully filled, 1 (0.3%) barely filled. 
-Level 1: 177 meshlets (22220 tris). Meshlets: 170 (96.0%) fully filled, 6 (3.4%) barely filled. 
-Level 2: 89 meshlets (11108 tris). Meshlets: 84 (94.4%) fully filled, 2 (2.2%) barely filled. 
-Level 3: 45 meshlets (5549 tris). Meshlets: 42 (93.3%) fully filled, 2 (4.4%) barely filled. 
-Level 4: 22 meshlets (2771 tris). Meshlets: 21 (95.5%) fully filled, 0 (0.0%) barely filled. 
-Level 5: 11 meshlets (1385 tris). Meshlets: 10 (90.9%) fully filled, 0 (0.0%) barely filled. RNG tris removed: 135 (9.7%).
-Level 6: 6 meshlets (692 tris). Meshlets: 5 (83.3%) fully filled, 1 (16.7%) barely filled. RNG tris removed: 689 (99.6%).
-Level 7: 4 meshlets (346 tris). Meshlets: 0 (0.0%) fully filled, 1 (25.0%) barely filled. RNG tris removed: 328 (94.8%).
-Level 8: 2 meshlets (173 tris). Meshlets: 0 (0.0%) fully filled, 0 (0.0%) barely filled. RNG tris removed: 152 (87.9%).
-Level 9: 1 meshlets (86 tris). Meshlets: 0 (0.0%) fully filled, 0 (0.0%) barely filled. Contains 1 roots. RNG tris removed: 83 (96.5%).
-Total RNG tris removed: 1387 (1.6%)
+Level 1: 176 meshlets (22216 tris). Meshlets: 169 (96.0%) fully filled, 4 (2.3%) barely filled. 
+Level 2: 88 meshlets (11102 tris). Meshlets: 82 (93.2%) fully filled, 1 (1.1%) barely filled. 
+Level 3: 45 meshlets (5547 tris). Meshlets: 42 (93.3%) fully filled, 2 (4.4%) barely filled. 
+Level 4: 23 meshlets (2773 tris). Meshlets: 21 (91.3%) fully filled, 1 (4.3%) barely filled. 
+Level 5: 11 meshlets (1385 tris). Meshlets: 10 (90.9%) fully filled, 0 (0.0%) barely filled. 
+Level 6: 6 meshlets (692 tris). Meshlets: 5 (83.3%) fully filled, 1 (16.7%) barely filled. RNG tris removed: 155 (22.4%).
+Level 7: 3 meshlets (346 tris). Meshlets: 2 (66.7%) fully filled, 0 (0.0%) barely filled. RNG tris removed: 303 (87.6%).
+Level 8: 2 meshlets (173 tris). Meshlets: 0 (0.0%) fully filled, 1 (50.0%) barely filled. RNG tris removed: 136 (78.6%).
+Level 9: 1 meshlets (86 tris). Meshlets: 0 (0.0%) fully filled, 0 (0.0%) barely filled. Contains 1 roots. RNG tris removed: 77 (89.5%).
+Total RNG tris removed: 671 (0.8%)
 
-Created 10 LOD levels. Total 705 meshlets.
+Created 10 LOD levels. Total 703 meshlets.
 There are 348 bottom level meshlets with 44443 triangles.
 There are 1 root meshlets with 86 triangles.
 Best case renders only 0.2% triangles.

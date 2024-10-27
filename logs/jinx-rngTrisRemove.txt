@@ -20,54 +20,172 @@ Bounding box min: [-0.64, -0.01, -0.40]
 Bounding box max: [0.39, 1.63, 0.59]
 
 Creating LOD level 1. Starting with 348 meshlets (44443 triangles).
-    There are 31 (35.6%) parts after METIS split with more meshlets than 4. This is just how METIS works.
+    There are 25 (28.7%) parts after METIS split with more meshlets than 4. This is just how METIS works.
     Partitioned into 87 groups of ~4 meshlets
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
     Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
     	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
     Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
     	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
     Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
     	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 319 tris (49.84%). PERFECT
     Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
     	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 191 tris (49.74%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 191 tris (49.74%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 319 tris (49.84%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
     Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
     	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
     Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
     	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
     Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
     	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
     Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
     	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
     Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
     	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
     Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
     Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
     	Simplify (intial=640 into target=320 tris), got 319 tris (49.84%). PERFECT
     Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
     	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
     Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
     	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 191 tris (49.74%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 191 tris (49.74%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 319 tris (49.84%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 319 tris (49.84%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 191 tris (49.74%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
     Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
     	Simplify (intial=640 into target=320 tris), got 319 tris (49.84%). PERFECT
     Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
     	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
     Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
     	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
     Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
     	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
     Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
     	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (411 tris: [128,128,128,27])
+    	Simplify (intial=411 into target=205 tris), got 205 tris (49.88%). PERFECT
     Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
     	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
     Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
     Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
     Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
     	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
     Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
@@ -76,415 +194,287 @@ Creating LOD level 1. Starting with 348 meshlets (44443 triangles).
     	Simplify (intial=384 into target=192 tris), got 191 tris (49.74%). PERFECT
     Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
     	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 191 tris (49.74%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
     Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
     	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (539 tris: [128,128,128,128,27])
-    	Simplify (intial=539 into target=269 tris), got 269 tris (49.91%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 191 tris (49.74%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 191 tris (49.74%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
 
-Creating LOD level 2. Starting with 205 meshlets (22210 triangles).
-    Previous level removed 22233 (50.0%) of the remaining triangles.
-    There are 20 (38.5%) parts after METIS split with more meshlets than 4. This is just how METIS works.
-    Partitioned into 52 groups of ~4 meshlets
-    Merged meshlet created from 3 meshlets (192 tris: [64,64,64])
-    	Simplify (intial=192 into target=96 tris), got 96 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (576 tris: [128,128,64,128,128])
-    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (512 tris: [128,128,128,64,64])
-    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
-    Merged meshlet created from 4 meshlets (447 tris: [63,128,128,128])
-    	Simplify (intial=447 into target=223 tris), got 222 tris (49.66%). PERFECT
-    Merged meshlet created from 3 meshlets (320 tris: [64,128,128])
-    	Simplify (intial=320 into target=160 tris), got 159 tris (49.69%). PERFECT
-    Merged meshlet created from 5 meshlets (512 tris: [64,128,128,128,64])
-    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
-    Merged meshlet created from 4 meshlets (384 tris: [64,64,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (319 tris: [128,128,63])
-    	Simplify (intial=319 into target=159 tris), got 158 tris (49.53%). PERFECT
+Creating LOD level 2. Starting with 199 meshlets (22200 triangles).
+    Previous level removed 22243 (50.0%) of the remaining triangles.
+    There are 18 (36.0%) parts after METIS split with more meshlets than 4. This is just how METIS works.
+    Partitioned into 50 groups of ~4 meshlets
+    Merged meshlet created from 4 meshlets (447 tris: [128,127,128,64])
+    	Simplify (intial=447 into target=223 tris), got 223 tris (49.89%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (448 tris: [128,64,128,128])
+    	Simplify (intial=448 into target=224 tris), got 224 tris (50.00%). PERFECT
     Merged meshlet created from 4 meshlets (448 tris: [128,128,128,64])
     	Simplify (intial=448 into target=224 tris), got 224 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (576 tris: [128,128,128,128,64])
-    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (320 tris: [128,128,64])
+    Merged meshlet created from 3 meshlets (320 tris: [128,64,128])
     	Simplify (intial=320 into target=160 tris), got 159 tris (49.69%). PERFECT
-    Merged meshlet created from 5 meshlets (512 tris: [128,64,128,128,64])
-    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    Merged meshlet created from 5 meshlets (639 tris: [128,127,128,128,128])
+    	Simplify (intial=639 into target=319 tris), got 319 tris (49.92%). PERFECT
+    Merged meshlet created from 4 meshlets (447 tris: [128,128,128,63])
+    	Simplify (intial=447 into target=223 tris), got 223 tris (49.89%). PERFECT
+    Merged meshlet created from 5 meshlets (575 tris: [128,128,63,128,128])
+    	Simplify (intial=575 into target=287 tris), got 287 tris (49.91%). PERFECT
+    Merged meshlet created from 4 meshlets (446 tris: [128,63,128,127])
+    	Simplify (intial=446 into target=223 tris), got 223 tris (50.00%). PERFECT
     Merged meshlet created from 3 meshlets (383 tris: [128,127,128])
     	Simplify (intial=383 into target=191 tris), got 191 tris (49.87%). PERFECT
-    Merged meshlet created from 5 meshlets (510 tris: [127,128,128,64,63])
-    	Simplify (intial=510 into target=255 tris), got 254 tris (49.80%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 188 tris (48.96%). PERFECT
-    Merged meshlet created from 3 meshlets (383 tris: [128,128,127])
-    	Simplify (intial=383 into target=191 tris), got 190 tris (49.61%). PERFECT
-    Merged meshlet created from 4 meshlets (447 tris: [128,128,128,63])
-    	Simplify (intial=447 into target=223 tris), got 222 tris (49.66%). PERFECT
-    Merged meshlet created from 5 meshlets (512 tris: [128,128,64,128,64])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (448 tris: [128,128,128,64])
-    	Simplify (intial=448 into target=224 tris), got 224 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (512 tris: [128,64,128,128,64])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (320 tris: [128,64,128])
-    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (512 tris: [128,64,128,64,128])
-    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
-    Merged meshlet created from 3 meshlets (320 tris: [128,128,64])
-    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (320 tris: [128,128,64])
-    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (576 tris: [128,128,128,128,64])
-    	Simplify (intial=576 into target=288 tris), got 287 tris (49.83%). PERFECT
-    Merged meshlet created from 5 meshlets (576 tris: [128,128,128,128,64])
-    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (448 tris: [128,128,64,128])
-    	Simplify (intial=448 into target=224 tris), got 224 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (383 tris: [128,128,127])
-    	Simplify (intial=383 into target=191 tris), got 190 tris (49.61%). PERFECT
-    Merged meshlet created from 3 meshlets (256 tris: [64,128,64])
-    	Simplify (intial=256 into target=128 tris), got 128 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (575 tris: [128,128,128,128,63])
-    	Simplify (intial=575 into target=287 tris), got 287 tris (49.91%). PERFECT
-    Merged meshlet created from 5 meshlets (576 tris: [128,128,128,64,128])
-    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (512 tris: [128,128,64,128,64])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (256 tris: [128,64,64])
-    	Simplify (intial=256 into target=128 tris), got 128 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (256 tris: [64,128,64])
-    	Simplify (intial=256 into target=128 tris), got 128 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (448 tris: [128,128,64,128])
-    	Simplify (intial=448 into target=224 tris), got 224 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (576 tris: [128,128,128,128,64])
-    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (320 tris: [128,128,64])
-    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (512 tris: [128,64,128,64,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (320 tris: [128,128,64])
-    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (448 tris: [128,128,128,64])
-    	Simplify (intial=448 into target=224 tris), got 224 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (320 tris: [128,64,128])
-    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (448 tris: [128,64,128,64,64])
-    	Simplify (intial=448 into target=224 tris), got 224 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (525 tris: [128,128,128,13,128])
-    	Simplify (intial=525 into target=262 tris), got 262 tris (49.90%). PERFECT
-    Merged meshlet created from 4 meshlets (447 tris: [63,128,128,128])
-    	Simplify (intial=447 into target=223 tris), got 223 tris (49.89%). PERFECT
-    Merged meshlet created from 3 meshlets (319 tris: [64,128,127])
+    Merged meshlet created from 5 meshlets (511 tris: [128,64,128,127,64])
+    	Simplify (intial=511 into target=255 tris), got 255 tris (49.90%). PERFECT
+    Merged meshlet created from 3 meshlets (319 tris: [128,128,63])
     	Simplify (intial=319 into target=159 tris), got 158 tris (49.53%). PERFECT
-    Merged meshlet created from 5 meshlets (576 tris: [128,128,128,128,64])
-    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (320 tris: [64,128,128])
-    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (512 tris: [128,64,128,128,64])
-    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
-
-Creating LOD level 3. Starting with 109 meshlets (11081 triangles).
-    Previous level removed 11129 (50.1%) of the remaining triangles.
-    There are 8 (28.6%) parts after METIS split with more meshlets than 4. This is just how METIS works.
-    Partitioned into 28 groups of ~4 meshlets
-    Merged meshlet created from 4 meshlets (381 tris: [128,95,128,30])
-    	Simplify (intial=381 into target=190 tris), got 189 tris (49.61%). PERFECT
-    Merged meshlet created from 5 meshlets (512 tris: [128,64,128,64,128])
-    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (262 tris: [128,128,6])
-    	Simplify (intial=262 into target=131 tris), got 130 tris (49.62%). PERFECT
-    Merged meshlet created from 4 meshlets (415 tris: [128,128,128,31])
-    	Simplify (intial=415 into target=207 tris), got 207 tris (49.88%). PERFECT
-    Merged meshlet created from 4 meshlets (350 tris: [96,64,128,62])
-    	Simplify (intial=350 into target=175 tris), got 175 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (96 tris: [32,32,32])
-    	RNG triangle remove: 10
-    	Simplify (intial=96 into target=48 tris), got 48 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (511 tris: [128,128,128,127])
-    	Simplify (intial=511 into target=255 tris), got 255 tris (49.90%). PERFECT
-    Merged meshlet created from 3 meshlets (192 tris: [32,128,32])
-    	Simplify (intial=192 into target=96 tris), got 96 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (576 tris: [128,96,128,128,96])
-    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
-    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (288 tris: [128,128,32])
-    	Simplify (intial=288 into target=144 tris), got 144 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (352 tris: [128,128,96])
-    	Simplify (intial=352 into target=176 tris), got 176 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (416 tris: [128,128,128,32])
-    	Simplify (intial=416 into target=208 tris), got 208 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
-    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (286 tris: [127,128,31])
-    	Simplify (intial=286 into target=143 tris), got 142 tris (49.65%). PERFECT
-    Merged meshlet created from 3 meshlets (383 tris: [128,128,127])
-    	Simplify (intial=383 into target=191 tris), got 191 tris (49.87%). PERFECT
-    Merged meshlet created from 5 meshlets (543 tris: [127,128,128,32,128])
-    	Simplify (intial=543 into target=271 tris), got 271 tris (49.91%). PERFECT
-    Merged meshlet created from 5 meshlets (512 tris: [96,128,64,128,96])
-    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
-    Merged meshlet created from 3 meshlets (286 tris: [128,128,30])
-    	Simplify (intial=286 into target=143 tris), got 142 tris (49.65%). PERFECT
-    Merged meshlet created from 3 meshlets (253 tris: [94,128,31])
-    	Simplify (intial=253 into target=126 tris), got 126 tris (49.80%). PERFECT
-    Merged meshlet created from 5 meshlets (480 tris: [32,128,64,128,128])
-    	Simplify (intial=480 into target=240 tris), got 240 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (416 tris: [128,128,128,32])
-    	Simplify (intial=416 into target=208 tris), got 208 tris (50.00%). PERFECT
-    Merged meshlet created from 5 meshlets (511 tris: [128,96,128,128,31])
-    	Simplify (intial=511 into target=255 tris), got 255 tris (49.90%). PERFECT
-    Merged meshlet created from 4 meshlets (415 tris: [128,127,32,128])
-    	Simplify (intial=415 into target=207 tris), got 207 tris (49.88%). PERFECT
-    Merged meshlet created from 4 meshlets (416 tris: [128,128,128,32])
-    	Simplify (intial=416 into target=208 tris), got 208 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (347 tris: [63,128,62,94])
-    	Simplify (intial=347 into target=173 tris), got 173 tris (49.86%). PERFECT
-    Merged meshlet created from 5 meshlets (570 tris: [128,128,126,128,60])
-    	Simplify (intial=570 into target=285 tris), got 285 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (288 tris: [128,128,32])
-    	Simplify (intial=288 into target=144 tris), got 144 tris (50.00%). PERFECT
-
-Creating LOD level 4. Starting with 57 meshlets (5531 triangles).
-    Previous level removed 5550 (50.1%) of the remaining triangles.
-    Partitioned into 15 groups of ~4 meshlets
-    Merged meshlet created from 4 meshlets (431 tris: [128,48,128,127])
-    	Simplify (intial=431 into target=215 tris), got 214 tris (49.65%). PERFECT
-    Merged meshlet created from 4 meshlets (448 tris: [128,128,128,64])
-    	Simplify (intial=448 into target=224 tris), got 224 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (256 tris: [96,32,128])
-    	Simplify (intial=256 into target=128 tris), got 128 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (320 tris: [128,16,128,48])
-    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
     Merged meshlet created from 3 meshlets (320 tris: [128,128,64])
-    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (383 tris: [128,47,128,80])
-    	Simplify (intial=383 into target=191 tris), got 190 tris (49.61%). PERFECT
-    Merged meshlet created from 4 meshlets (463 tris: [128,128,128,79])
-    	RNG triangle remove: 18
-    	Simplify (intial=463 into target=231 tris), got 231 tris (49.89%). PERFECT
+    	Simplify (intial=320 into target=160 tris), got 159 tris (49.69%). PERFECT
+    Merged meshlet created from 3 meshlets (256 tris: [128,64,64])
+    	Simplify (intial=256 into target=128 tris), got 127 tris (49.61%). PERFECT
+    Merged meshlet created from 5 meshlets (576 tris: [64,128,128,128,128])
+    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
     Merged meshlet created from 4 meshlets (447 tris: [128,128,63,128])
     	Simplify (intial=447 into target=223 tris), got 222 tris (49.66%). PERFECT
-    Merged meshlet created from 3 meshlets (285 tris: [128,128,29])
-    	RNG triangle remove: 111
-    	Simplify (intial=285 into target=142 tris), got 142 tris (49.82%). PERFECT
-    Merged meshlet created from 4 meshlets (509 tris: [127,128,126,128])
-    	Simplify (intial=509 into target=254 tris), got 254 tris (49.90%). PERFECT
-    Merged meshlet created from 4 meshlets (382 tris: [128,128,14,112])
-    	Simplify (intial=382 into target=191 tris), got 190 tris (49.74%). PERFECT
-    Merged meshlet created from 4 meshlets (236 tris: [14,15,80,127])
-    	RNG triangle remove: 32
-    	Simplify (intial=236 into target=118 tris), got 118 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (463 tris: [128,128,79,128])
-    	Simplify (intial=463 into target=231 tris), got 230 tris (49.68%). PERFECT
-    Merged meshlet created from 4 meshlets (352 tris: [128,80,128,16])
-    	RNG triangle remove: 3
-    	Simplify (intial=352 into target=176 tris), got 176 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (236 tris: [128,61,2,45])
-    	RNG triangle remove: 17
-    	Simplify (intial=236 into target=118 tris), got 118 tris (50.00%). PERFECT
-
-Creating LOD level 5. Starting with 27 meshlets (2757 triangles).
-    Previous level removed 2774 (50.2%) of the remaining triangles.
-    Partitioned into 7 groups of ~4 meshlets
-    Merged meshlet created from 4 meshlets (320 tris: [128,32,128,32])
-    	RNG triangle remove: 92
+    Merged meshlet created from 4 meshlets (384 tris: [128,64,64,128])
+    	Simplify (intial=384 into target=192 tris), got 191 tris (49.74%). PERFECT
+    Merged meshlet created from 5 meshlets (576 tris: [128,128,64,128,128])
+    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (318 tris: [63,128,127])
+    	Simplify (intial=318 into target=159 tris), got 159 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (383 tris: [128,128,127])
+    	Simplify (intial=383 into target=191 tris), got 191 tris (49.87%). PERFECT
+    Merged meshlet created from 4 meshlets (384 tris: [128,64,128,64])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (319 tris: [128,127,64])
+    	Simplify (intial=319 into target=159 tris), got 159 tris (49.84%). PERFECT
+    Merged meshlet created from 5 meshlets (640 tris: [128,128,128,128,128])
+    	Simplify (intial=640 into target=320 tris), got 320 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (510 tris: [128,63,128,128,63])
+    	Simplify (intial=510 into target=255 tris), got 255 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (512 tris: [128,64,128,128,64])
+    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    Merged meshlet created from 4 meshlets (448 tris: [128,64,128,128])
+    	Simplify (intial=448 into target=224 tris), got 224 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (576 tris: [128,128,128,64,128])
+    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (320 tris: [128,128,64])
     	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (356 tris: [128,86,128,14])
-    	RNG triangle remove: 118
-    	Simplify (intial=356 into target=178 tris), got 178 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (352 tris: [128,96,128])
-    	Simplify (intial=352 into target=176 tris), got 176 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (476 tris: [94,128,126,128])
-    	Simplify (intial=476 into target=238 tris), got 235 tris (49.37%). PERFECT
-    Merged meshlet created from 4 meshlets (410 tris: [128,62,118,102])
-    	RNG triangle remove: 102
-    	Simplify (intial=410 into target=205 tris), got 205 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (421 tris: [128,62,103,128])
-    	RNG triangle remove: 121
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (446 tris: [128,63,128,64,63])
+    	Simplify (intial=446 into target=223 tris), got 222 tris (49.78%). PERFECT
+    Merged meshlet created from 4 meshlets (447 tris: [128,63,128,128])
+    	Simplify (intial=447 into target=223 tris), got 223 tris (49.89%). PERFECT
+    Merged meshlet created from 3 meshlets (320 tris: [128,64,128])
+    	Simplify (intial=320 into target=160 tris), got 159 tris (49.69%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 255 tris (49.80%). PERFECT
+    Merged meshlet created from 5 meshlets (512 tris: [128,64,128,128,64])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (320 tris: [128,64,128])
+    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (320 tris: [128,128,64])
+    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (512 tris: [128,128,64,128,64])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (576 tris: [128,128,64,128,128])
+    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (576 tris: [128,128,128,128,64])
+    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (576 tris: [128,128,64,128,128])
+    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (320 tris: [128,128,64])
+    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (320 tris: [128,64,128])
+    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (319 tris: [128,63,128])
+    	Simplify (intial=319 into target=159 tris), got 158 tris (49.53%). PERFECT
+    Merged meshlet created from 3 meshlets (269 tris: [64,128,77])
+    	Simplify (intial=269 into target=134 tris), got 133 tris (49.44%). PERFECT
+    Merged meshlet created from 3 meshlets (320 tris: [128,128,64])
+    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (639 tris: [128,128,128,128,127])
+    	Simplify (intial=639 into target=319 tris), got 318 tris (49.77%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (576 tris: [64,128,128,128,128])
+    	Simplify (intial=576 into target=288 tris), got 288 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (320 tris: [128,128,64])
+    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
+
+Creating LOD level 3. Starting with 111 meshlets (11080 triangles).
+    Previous level removed 11120 (50.1%) of the remaining triangles.
+    There are 8 (28.6%) parts after METIS split with more meshlets than 4. This is just how METIS works.
+    Partitioned into 28 groups of ~4 meshlets
+    Merged meshlet created from 5 meshlets (448 tris: [128,128,32,128,32])
+    	Simplify (intial=448 into target=224 tris), got 224 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (573 tris: [128,128,128,94,95])
+    	Simplify (intial=573 into target=286 tris), got 285 tris (49.74%). PERFECT
+    Merged meshlet created from 3 meshlets (318 tris: [128,128,62])
+    	Simplify (intial=318 into target=159 tris), got 159 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (512 tris: [128,128,128,128])
+    	Simplify (intial=512 into target=256 tris), got 256 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (384 tris: [128,32,128,64,32])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (190 tris: [128,30,32])
+    	Simplify (intial=190 into target=95 tris), got 95 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (261 tris: [128,5,128])
+    	Simplify (intial=261 into target=130 tris), got 129 tris (49.43%). PERFECT
+    Merged meshlet created from 4 meshlets (416 tris: [128,128,32,128])
+    	Simplify (intial=416 into target=208 tris), got 208 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (384 tris: [128,128,128])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (287 tris: [128,31,128])
+    	Simplify (intial=287 into target=143 tris), got 143 tris (49.83%). PERFECT
+    Merged meshlet created from 4 meshlets (384 tris: [96,128,128,32])
+    	Simplify (intial=384 into target=192 tris), got 192 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (544 tris: [32,128,128,128,128])
+    	Simplify (intial=544 into target=272 tris), got 272 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (320 tris: [128,128,32,32])
+    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (415 tris: [128,128,32,127])
+    	Simplify (intial=415 into target=207 tris), got 207 tris (49.88%). PERFECT
+    Merged meshlet created from 4 meshlets (446 tris: [128,63,128,127])
+    	Simplify (intial=446 into target=223 tris), got 222 tris (49.78%). PERFECT
+    Merged meshlet created from 3 meshlets (254 tris: [128,95,31])
+    	Simplify (intial=254 into target=127 tris), got 127 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (479 tris: [128,128,128,95])
+    	Simplify (intial=479 into target=239 tris), got 239 tris (49.90%). PERFECT
+    Merged meshlet created from 4 meshlets (382 tris: [128,96,128,30])
+    	Simplify (intial=382 into target=191 tris), got 191 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (543 tris: [128,95,128,128,64])
+    	Simplify (intial=543 into target=271 tris), got 270 tris (49.72%). PERFECT
+    Merged meshlet created from 3 meshlets (319 tris: [128,128,63])
+    	Simplify (intial=319 into target=159 tris), got 159 tris (49.84%). PERFECT
+    Merged meshlet created from 4 meshlets (383 tris: [128,96,128,31])
+    	Simplify (intial=383 into target=191 tris), got 190 tris (49.61%). PERFECT
+    Merged meshlet created from 4 meshlets (351 tris: [128,31,64,128])
+    	Simplify (intial=351 into target=175 tris), got 175 tris (49.86%). PERFECT
+    Merged meshlet created from 5 meshlets (448 tris: [128,128,128,32,32])
+    	Simplify (intial=448 into target=224 tris), got 224 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (317 tris: [32,128,94,63])
+    	Simplify (intial=317 into target=158 tris), got 157 tris (49.53%). PERFECT
+    Merged meshlet created from 3 meshlets (319 tris: [128,63,128])
+    	Simplify (intial=319 into target=159 tris), got 158 tris (49.53%). PERFECT
+    Merged meshlet created from 5 meshlets (639 tris: [128,128,128,128,127])
+    	Simplify (intial=639 into target=319 tris), got 318 tris (49.77%). PERFECT
+    Merged meshlet created from 5 meshlets (542 tris: [128,31,127,128,128])
+    	Simplify (intial=542 into target=271 tris), got 270 tris (49.82%). PERFECT
+    Merged meshlet created from 3 meshlets (222 tris: [64,31,127])
+    	Simplify (intial=222 into target=111 tris), got 110 tris (49.55%). PERFECT
+
+Creating LOD level 4. Starting with 58 meshlets (5524 triangles).
+    Previous level removed 5556 (50.1%) of the remaining triangles.
+    There are 4 (26.7%) parts after METIS split with more meshlets than 4. This is just how METIS works.
+    Partitioned into 15 groups of ~4 meshlets
+    Merged meshlet created from 4 meshlets (333 tris: [128,47,128,30])
+    	Simplify (intial=333 into target=166 tris), got 165 tris (49.55%). PERFECT
+    Merged meshlet created from 4 meshlets (299 tris: [29,128,128,14])
+    	Simplify (intial=299 into target=149 tris), got 149 tris (49.83%). PERFECT
+    Merged meshlet created from 5 meshlets (556 tris: [128,128,128,62,110])
+    	Simplify (intial=556 into target=278 tris), got 277 tris (49.82%). PERFECT
+    Merged meshlet created from 2 meshlets (222 tris: [128,94])
+    	Simplify (intial=222 into target=111 tris), got 110 tris (49.55%). PERFECT
+    Merged meshlet created from 5 meshlets (363 tris: [14,128,31,128,62])
+    	Simplify (intial=363 into target=181 tris), got 180 tris (49.59%). PERFECT
+    Merged meshlet created from 4 meshlets (447 tris: [128,63,128,128])
+    	Simplify (intial=447 into target=223 tris), got 223 tris (49.89%). PERFECT
+    Merged meshlet created from 3 meshlets (366 tris: [127,128,111])
+    	Simplify (intial=366 into target=183 tris), got 183 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (353 tris: [128,1,128,96])
+    	Simplify (intial=353 into target=176 tris), got 176 tris (49.86%). PERFECT
+    Merged meshlet created from 5 meshlets (543 tris: [128,128,128,64,95])
+    	Simplify (intial=543 into target=271 tris), got 271 tris (49.91%). PERFECT
+    Merged meshlet created from 4 meshlets (448 tris: [128,64,128,128])
+    	Simplify (intial=448 into target=224 tris), got 224 tris (50.00%). PERFECT
+    Merged meshlet created from 2 meshlets (224 tris: [128,96])
+    	Simplify (intial=224 into target=112 tris), got 112 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (204 tris: [29,128,31,16])
+    	Simplify (intial=204 into target=102 tris), got 102 tris (50.00%). PERFECT
+    Merged meshlet created from 5 meshlets (495 tris: [128,128,128,32,79])
+    	Simplify (intial=495 into target=247 tris), got 247 tris (49.90%). PERFECT
+    Merged meshlet created from 4 meshlets (351 tris: [128,80,128,15])
+    	Simplify (intial=351 into target=175 tris), got 175 tris (49.86%). PERFECT
+    Merged meshlet created from 3 meshlets (320 tris: [128,64,128])
+    	Simplify (intial=320 into target=160 tris), got 160 tris (50.00%). PERFECT
+
+Creating LOD level 5. Starting with 29 meshlets (2754 triangles).
+    Previous level removed 2770 (50.1%) of the remaining triangles.
+    Partitioned into 8 groups of ~4 meshlets
+    Merged meshlet created from 3 meshlets (170 tris: [128,21,21])
+    	Simplify (intial=170 into target=85 tris), got 84 tris (49.41%). PERFECT
+    Merged meshlet created from 4 meshlets (421 tris: [37,128,128,128])
     	Simplify (intial=421 into target=210 tris), got 210 tris (49.88%). PERFECT
-    Merged meshlet created from 4 meshlets (422 tris: [128,128,48,118])
-    	RNG triangle remove: 188
-    	Simplify (intial=422 into target=211 tris), got 211 tris (50.00%). PERFECT
+    Merged meshlet created from 3 meshlets (293 tris: [110,128,55])
+    	RNG triangle remove: 27
+    	Simplify (intial=293 into target=146 tris), got 146 tris (49.83%). PERFECT
+    Merged meshlet created from 4 meshlets (403 tris: [128,52,128,95])
+    	Simplify (intial=403 into target=201 tris), got 201 tris (49.88%). PERFECT
+    Merged meshlet created from 3 meshlets (303 tris: [128,47,128])
+    	RNG triangle remove: 25
+    	Simplify (intial=303 into target=151 tris), got 151 tris (49.83%). PERFECT
+    Merged meshlet created from 4 meshlets (381 tris: [102,128,119,32])
+    	RNG triangle remove: 79
+    	Simplify (intial=381 into target=190 tris), got 190 tris (49.87%). PERFECT
+    Merged meshlet created from 4 meshlets (432 tris: [128,48,128,128])
+    	Simplify (intial=432 into target=216 tris), got 216 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (351 tris: [15,128,96,112])
+    	Simplify (intial=351 into target=175 tris), got 175 tris (49.86%). PERFECT
 
-Creating LOD level 6. Starting with 14 meshlets (1375 triangles).
-    Previous level removed 1382 (50.1%) of the remaining triangles.
+Creating LOD level 6. Starting with 15 meshlets (1373 triangles).
+    Previous level removed 1381 (50.1%) of the remaining triangles.
     Partitioned into 4 groups of ~4 meshlets
-    Merged meshlet created from 3 meshlets (338 tris: [128,82,128])
-    	RNG triangle remove: 157
-    	Simplify (intial=338 into target=169 tris), got 169 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (440 tris: [128,107,128,77])
-    	RNG triangle remove: 145
-    	Simplify (intial=440 into target=220 tris), got 220 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (354 tris: [128,50,128,48])
-    	RNG triangle remove: 116
-    	Simplify (intial=354 into target=177 tris), got 177 tris (50.00%). PERFECT
-    Merged meshlet created from 3 meshlets (243 tris: [128,32,83])
-    	RNG triangle remove: 115
-    	Simplify (intial=243 into target=121 tris), got 121 tris (49.79%). PERFECT
+    Merged meshlet created from 4 meshlets (367 tris: [84,128,82,73])
+    	Simplify (intial=367 into target=183 tris), got 182 tris (49.59%). PERFECT
+    Merged meshlet created from 3 meshlets (274 tris: [128,18,128])
+    	RNG triangle remove: 100
+    	Simplify (intial=274 into target=137 tris), got 137 tris (50.00%). PERFECT
+    Merged meshlet created from 4 meshlets (407 tris: [128,23,128,128])
+    	RNG triangle remove: 94
+    	Simplify (intial=407 into target=203 tris), got 203 tris (49.88%). PERFECT
+    Merged meshlet created from 4 meshlets (325 tris: [62,128,88,47])
+    	RNG triangle remove: 19
+    	Simplify (intial=325 into target=162 tris), got 162 tris (49.85%). PERFECT
 
-Creating LOD level 7. Starting with 7 meshlets (687 triangles).
-    Previous level removed 688 (50.0%) of the remaining triangles.
+Creating LOD level 7. Starting with 8 meshlets (684 triangles).
+    Previous level removed 689 (50.2%) of the remaining triangles.
     Partitioned into 2 groups of ~4 meshlets
-    Merged meshlet created from 3 meshlets (298 tris: [128,49,121])
-    	RNG triangle remove: 135
-    	Simplify (intial=298 into target=149 tris), got 149 tris (50.00%). PERFECT
-    Merged meshlet created from 4 meshlets (389 tris: [128,41,128,92])
-    	RNG triangle remove: 185
-    	Simplify (intial=389 into target=194 tris), got 194 tris (49.87%). PERFECT
+    Merged meshlet created from 4 meshlets (365 tris: [128,75,128,34])
+    	RNG triangle remove: 150
+    	Simplify (intial=365 into target=182 tris), got 182 tris (49.86%). PERFECT
+    Merged meshlet created from 4 meshlets (319 tris: [128,54,128,9])
+    	RNG triangle remove: 82
+    	Simplify (intial=319 into target=159 tris), got 159 tris (49.84%). PERFECT
 
-Creating LOD level 8. Starting with 4 meshlets (343 triangles).
-    Previous level removed 344 (50.1%) of the remaining triangles.
+Creating LOD level 8. Starting with 4 meshlets (341 triangles).
+    Previous level removed 343 (50.1%) of the remaining triangles.
     Partitioned into 1 groups of ~4 meshlets
-    Merged meshlet created from 4 meshlets (343 tris: [122,27,114,80])
-    	RNG triangle remove: 157
-    	Simplify (intial=343 into target=171 tris), got 171 tris (49.85%). PERFECT
+    Merged meshlet created from 4 meshlets (341 tris: [128,54,128,31])
+    	RNG triangle remove: 134
+    	Simplify (intial=341 into target=170 tris), got 170 tris (49.85%). PERFECT
 
-Creating LOD level 9. Starting with 2 meshlets (171 triangles).
-    Previous level removed 172 (50.1%) of the remaining triangles.
+Creating LOD level 9. Starting with 2 meshlets (170 triangles).
+    Previous level removed 171 (50.1%) of the remaining triangles.
     Partitioned into 1 groups of ~4 meshlets
-    Merged meshlet created from 2 meshlets (171 tris: [104,67])
-    	RNG triangle remove: 73
-    	Simplify (intial=171 into target=85 tris), got 85 tris (49.71%). PERFECT
+    Merged meshlet created from 2 meshlets (170 tris: [119,51])
+    	RNG triangle remove: 70
+    	Simplify (intial=170 into target=85 tris), got 85 tris (50.00%). PERFECT
     Reached last meshlet. Creating root node
 
 ------------- SUMMARY -------------
 Level 0: 348 meshlets (44443 tris). Meshlets: 347 (99.7%) fully filled, 1 (0.3%) barely filled. 
-Level 1: 205 meshlets (22210 tris). Meshlets: 138 (67.3%) fully filled, 62 (30.2%) barely filled. 
-Level 2: 109 meshlets (11081 tris). Meshlets: 64 (58.7%) fully filled, 29 (26.6%) barely filled. 
-Level 3: 57 meshlets (5531 tris). Meshlets: 30 (52.6%) fully filled, 16 (28.1%) barely filled. RNG tris removed: 10 (0.2%).
-Level 4: 27 meshlets (2757 tris). Meshlets: 13 (48.1%) fully filled, 6 (22.2%) barely filled. RNG tris removed: 181 (6.6%).
-Level 5: 14 meshlets (1375 tris). Meshlets: 7 (50.0%) fully filled, 3 (21.4%) barely filled. RNG tris removed: 621 (45.2%).
-Level 6: 7 meshlets (687 tris). Meshlets: 3 (42.9%) fully filled, 2 (28.6%) barely filled. RNG tris removed: 533 (77.6%).
-Level 7: 4 meshlets (343 tris). Meshlets: 0 (0.0%) fully filled, 1 (25.0%) barely filled. RNG tris removed: 320 (93.3%).
-Level 8: 2 meshlets (171 tris). Meshlets: 0 (0.0%) fully filled, 0 (0.0%) barely filled. RNG tris removed: 157 (91.8%).
-Level 9: 1 meshlets (85 tris). Meshlets: 0 (0.0%) fully filled, 0 (0.0%) barely filled. Contains 1 roots. RNG tris removed: 73 (85.9%).
-Total RNG tris removed: 1895 (2.1%)
+Level 1: 199 meshlets (22200 tris). Meshlets: 139 (69.8%) fully filled, 50 (25.1%) barely filled. 
+Level 2: 111 meshlets (11080 tris). Meshlets: 65 (58.6%) fully filled, 32 (28.8%) barely filled. 
+Level 3: 58 meshlets (5524 tris). Meshlets: 31 (53.4%) fully filled, 18 (31.0%) barely filled. 
+Level 4: 29 meshlets (2754 tris). Meshlets: 14 (48.3%) fully filled, 9 (31.0%) barely filled. 
+Level 5: 15 meshlets (1373 tris). Meshlets: 7 (46.7%) fully filled, 4 (26.7%) barely filled. RNG tris removed: 131 (9.5%).
+Level 6: 8 meshlets (684 tris). Meshlets: 4 (50.0%) fully filled, 3 (37.5%) barely filled. RNG tris removed: 213 (31.1%).
+Level 7: 4 meshlets (341 tris). Meshlets: 2 (50.0%) fully filled, 2 (50.0%) barely filled. RNG tris removed: 232 (68.0%).
+Level 8: 2 meshlets (170 tris). Meshlets: 0 (0.0%) fully filled, 1 (50.0%) barely filled. RNG tris removed: 134 (78.8%).
+Level 9: 1 meshlets (85 tris). Meshlets: 0 (0.0%) fully filled, 0 (0.0%) barely filled. Contains 1 roots. RNG tris removed: 70 (82.4%).
+Total RNG tris removed: 780 (0.9%)
 
-Created 10 LOD levels. Total 774 meshlets.
+Created 10 LOD levels. Total 775 meshlets.
 There are 348 bottom level meshlets with 44443 triangles.
 There are 1 root meshlets with 85 triangles.
 Best case renders only 0.2% triangles.
